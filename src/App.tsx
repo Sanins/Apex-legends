@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.scss';
-import Counter from "./components/CounterReducer";
+import Counter from "./components/Counter";
+import Counter5 from "./components/Counter5";
 
-const App = () => {
+export default function App() {
   return (
     <div className="container">
       <Counter />
+      <Counter5 />
     </div>
   )
 }
-
-export default App;

@@ -1,17 +1,10 @@
-interface State {
-    count: number
-}
+import { State, Actions } from '../types';
+
 export const initialState:State = {
     count: 0
 }
 
-type Actions = 'reset' | 'increment' | 'decrement'
-
-interface Action {
-    type: Actions
-}
-
-export const reducer = (state: State, action: Action) : State => {
+export const reducer = (state: State, action: Actions) : State => {
     switch (action.type){
         case 'increment':
             return {count: state.count+1};

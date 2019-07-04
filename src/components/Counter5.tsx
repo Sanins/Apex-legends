@@ -1,8 +1,8 @@
-import React from 'react';
-import { initialState, reducer } from './reducers/Counter';
+import React, { useContext } from 'react';
+import { CounterValue } from './Counter';
 
-const CounterReducer = () => {
-    const [state, dispatch] = React.useReducer(reducer, initialState);
+export default function Counter5() {
+    const { state, dispatch } = useContext(CounterValue);
 
     return (
         <div className="counter">
@@ -13,5 +13,3 @@ const CounterReducer = () => {
         </div>
     )
 }
-
-export default CounterReducer;
