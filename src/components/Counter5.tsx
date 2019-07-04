@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CounterValue } from './Counter';
+import { CounterValue } from './../App';
 
 export default function Counter5() {
     const { state, dispatch } = useContext(CounterValue);
