@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Service } from '../types/Service';
+import { Service } from '../../types/Service';
+import { Legends } from '../../types/Types';
 
-export interface Starship {
-  name: string;
-}
-
-const useStarshipsService = () => {
-  const [result, setResult] = useState<Service<Starship>>({
+const useLegendsService = () => {
+  const [result, setResult] = useState<Service<Legends>>({
     status: 'loading'
   });
 
@@ -20,4 +17,4 @@ const useStarshipsService = () => {
   return result;
 };
 
-export default useStarshipsService;
+export default useLegendsService;

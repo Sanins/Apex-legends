@@ -1,8 +1,8 @@
 import React from 'react';
-import useStarshipsService from '../services/useStarshipsService';
+import useLegendsService from '../services/useLegendsService';
 
-const Starships: React.FC<{}> = () => {
-  const service = useStarshipsService();
+const Legends: React.FC<{}> = () => {
+  const service = useLegendsService();
 
   return (
     <>
@@ -27,4 +27,4 @@ const Starships: React.FC<{}> = () => {
   );
 };
 
-export default Starships;
+export default Legends;
