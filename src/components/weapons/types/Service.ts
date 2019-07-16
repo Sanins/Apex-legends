@@ -8,7 +8,7 @@ interface ServiceLoading {
 
 interface ServiceLoaded<T> {
   status: 'loaded';
-  payload: T;
+  payload: any;
 }
 
 interface ServiceError {

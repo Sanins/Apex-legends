@@ -11,13 +11,14 @@ const Starships: React.FC<{}> = () => {
           <p>hi</p>
         )}
         {service.status === 'loaded' &&
-          service.payload.results.map(starship => (
+          service.payload.map((starship: any) => (
             <div
               className="starship-item"
             >
               {starship.name}
             </div>
-          ))}
+          ))
+          }
       </div>
       {service.status === 'error' && (
         <div>Error, the backend moved to the dark side.</div>
