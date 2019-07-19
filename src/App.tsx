@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.scss';
 
-import Legends from "./components/legends/component/Legends"
+import Header from './components/header/header';
 
 export default function App() {
 
     return (
-        <Legends />
+        <>
+            <Header/>
+        </>
     )
 }

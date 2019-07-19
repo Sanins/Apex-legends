@@ -1,5 +1,5 @@
 import React from 'react';
-import useLegendsService from '../services/useLegendsService';
+import useLegendsService from './services/UseLegendsService';
 
 const Legends: React.FC<{}> = () => {
   const service = useLegendsService();
