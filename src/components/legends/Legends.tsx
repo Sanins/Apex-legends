@@ -1,22 +1,31 @@
 import React from 'react';
 import useLegendsService from './services/UseLegendsService';
+import Button from './../Button/Button'
 
 const Legends: React.FC<{}> = () => {
   const service = useLegendsService();
+
+	const showLegends = () => {
+    console.log('lol');
+	};
+
 
   return (
     <>
       <div className="card">
         {service.status === 'loading' && (
-          <p>hi</p>
+          <p>Loading</p>
         )}
         {service.status === 'loaded' &&
-          service.payload.map((starship: any) => (
-            <div
-              className="starship-item"
-            >
-              {starship.name}
-            </div>
+          service.payload.map((legends: any) => (
+            <>
+              <div className="legends__name">
+                <Button onClick={showLegends}>{legends.name}</Button>
+              </div>
+              <div className="legends__function">
+                {legends.function}
+              </div>
+            </>
           ))
           }
       </div>
