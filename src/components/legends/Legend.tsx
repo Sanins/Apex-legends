@@ -1,12 +1,8 @@
 import React from "react";
 import Button from '../Button/Button';
+import { LegendProps } from "../types/Types";
 
-interface lala {
-    title: string;
-    function: string;
-}
-
-export default function Legend(props: lala) {
+export default function Legend(props: LegendProps) {
     const [showHide, setShowhide] = React.useState(false);
 
     const showLegends = () => {
