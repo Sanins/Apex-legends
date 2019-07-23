@@ -1,6 +1,6 @@
 import React from "react";
 import Legend from './Legend';
-import useLegendsService from "./services/UseLegendsService";
+import useLegendsService from "./Services/UseLegendsService";
 
 const LegendList: React.FC<{}> = () => {
   const service = useLegendsService();
