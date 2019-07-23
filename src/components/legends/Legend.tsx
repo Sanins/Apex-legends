@@ -17,7 +17,10 @@ export default function Legend(props: LegendProps) {
         <div>
             <Button onClick={showLegends}>{props.title}</Button>
             {showHide &&
+            <>
+                <p>{props.title}</p>
                 <p>{props.function}</p>
+            </>
             }
         </div>
     );
