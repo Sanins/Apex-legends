@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Legends from '../legends/Legends';
+import LegendList from '../legends/LegendList';
 
 function Index() {
   return <h2>Home</h2>;
 }
 
 function LegendsLink() {
-  return <Legends/>;
+  return <LegendList/>;
 }
 
 function Users() {
