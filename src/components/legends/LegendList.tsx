@@ -30,7 +30,7 @@ const LegendList: React.FC<{}> = () => {
                   <p>{legends.function}</p>
                   <p>{legends.lore}</p>
                 </AccordionItemPanel>
-                </AccordionItem>
+              </AccordionItem>
               </>
             ))}
           </Accordion>
