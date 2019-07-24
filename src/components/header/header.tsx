@@ -17,6 +17,9 @@ function Users() {
 function AppRouter() {
   return (
     <Router>
+    <div>
+      <h1>Apex Legends</h1>
+    </div>
       <div>
         <nav>
           <ul>
