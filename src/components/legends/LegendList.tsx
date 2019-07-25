@@ -8,6 +8,7 @@ import {
   AccordionItemButton,
 } from 'react-accessible-accordion';
 import './LegendList.scss';
+import { LegendListProps } from '../types/Types';
 
 const LegendList: React.FC<{}> = () => {
   const service = useLegendsService();
@@ -20,15 +21,19 @@ const LegendList: React.FC<{}> = () => {
         )}
         {service.status === 'loaded' &&
         <Accordion allowZeroExpanded={true}>     
-            {service.payload.map((legends: any) => (
+            {service.payload.map((legends: LegendListProps) => (
               <>
               <AccordionItem>
                 <AccordionItemHeading>
                   <AccordionItemButton>{legends.name}</AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
+                  <h2>{legends.name}</h2>
                   <p>{legends.function}</p>
-                  <p>{legends.lore}</p>
+                  <div dangerouslySetInnerHTML={{__html: legends.lore}} />
+                  <p>{legends.about.real_name}</p>
+                  <p>{legends.about.age}</p>
+                  <p>{legends.abilities.ability_1.description}</p>
                 </AccordionItemPanel>
               </AccordionItem>
               </>
