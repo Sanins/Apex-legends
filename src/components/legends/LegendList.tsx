@@ -8,7 +8,7 @@ import {
   AccordionItemButton,
 } from 'react-accessible-accordion';
 import './LegendList.scss';
-import { LegendListProps } from '../types/Types';
+import { LegendListProps } from '../Types/Types';
 
 const LegendList: React.FC<{}> = () => {
   const service = useLegendsService();

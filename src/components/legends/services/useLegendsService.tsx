@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Service } from '../../types/Service';
-import { Legends } from '../../types/Types';
+import { Service } from '../../Types/Service';
+import { Legends } from '../../Types/Types';
 
 const useLegendsService = () => {
   const [result, setResult] = useState<Service<Legends>>({

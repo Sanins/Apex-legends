@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import LegendList from '../Legends/LegendList';
-import './header.scss';
+import './Header.scss';
 
 function Index() {
   return <h2>Home</h2>;
