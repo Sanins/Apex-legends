@@ -1,16 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import './Footer.scss';
+import { makeStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
+
+const useStyles = makeStyles(theme => ({
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+}));
 
 function AppRouter() {
+  const classes = useStyles();
+  
   return (
-    <Router>
-        <ul className="footer">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/legends/">Legends</Link></li>
-            <li><Link to="/users/">Users</Link></li>
-        </ul>
-    </Router>
+    <footer className={classes.footer}>
+      <Typography variant="h6" align="center" gutterBottom>
+        Footer
+      </Typography>
+      <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+        Something here to give the footer a purpose!
+      </Typography>
+    </footer>
   );
 }
 
