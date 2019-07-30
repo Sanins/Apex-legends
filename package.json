@@ -39,6 +39,8 @@
   },
   "devDependencies": {
     "@types/react": "^16.8.23",
-    "@types/react-router-dom": "^4.3.4"
+    "@types/react-router-dom": "^4.3.4",
+    "file-loader": "^4.1.0",
+    "url-loader": "^2.1.0"
   }
 }
