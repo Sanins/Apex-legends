@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
     accordion__heading: {
       color: '#FFF',
       width: '100%',
+      position: 'initial',
     },
     accordion__items: {
       position: 'relative',
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
         color: '#FFF',
         width: '200px',
         position: 'fixed',
-        marginTop: '64px',
+        marginTop: '64px',   
       },
       accordion__items: {
         position: 'absolute',
@@ -52,6 +53,7 @@ const ExpansionPanel = withStyles({
     borderBottom: '1px solid rgba(0, 0, 0, .125)',
     position: 'unset',
     boxShadow: 'none',
+    
     '&:not(:first-child)': {
       borderTop: 0,
     },
@@ -67,16 +69,15 @@ const ExpansionPanel = withStyles({
 
 const ExpansionPanelSummary = withStyles({
   root: {
-    borderBottom: '1px solid rgba(0, 0, 0, .125)',
-    marginBottom: -1,
-    minHeight: 56,
     '&$expanded': {
-      minHeight: 56,
       background: 'blue',
       pointerEvents: 'none',
+      minHeight: 'initial',
     },
   },
   content: {
+    alignItems: 'center',
+    maxHeight: '30px',
     '&$expanded': {
       margin: '12px 0',
     },
@@ -110,7 +111,7 @@ const LegendList: React.FC<{}> = () => {
   
   return (
     <>
-      <div ref={myRef} className={classes.dot}></div> 
+      <div ref={myRef} className='main'></div> 
 
       
       <div className={classes.card}>
@@ -129,13 +130,13 @@ const LegendList: React.FC<{}> = () => {
           >
             <ExpansionPanelSummary 
               onClick={()=>scrollToRef(myRef)} 
-              style={{top: key * 50 + 'px'}} 
-              className={classes.accordion__heading} 
+              style={{top: key * 50 + 'px', left: key%2 * 80 + 'px'}} 
+              className={classes.accordion__heading}
               aria-controls="panel1d-content" 
               id="panel1d-header"
             >
               <div>
-                <img style={{width: '100px'}} src={require(`./Images/${legends.name}.png`)}/>
+                <img style={{width: '60px'}} src={require(`./Images/${legends.name}.png`)}/>
               </div>
               <Typography>{legends.name}</Typography>
             </ExpansionPanelSummary>
@@ -143,7 +144,7 @@ const LegendList: React.FC<{}> = () => {
               <Typography>
                 {legends.function}
               </Typography>
-              <img src={require(`./Images/${legends.name}.png`)}/>
+              {/* <img src={require(`./Images/${legends.name}.png`)}/> */}
             </ExpansionPanelDetails>
           </ExpansionPanel>
           ))}
