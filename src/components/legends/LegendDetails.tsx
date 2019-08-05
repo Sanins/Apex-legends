@@ -19,7 +19,7 @@ export default function LegendDetail(props: LegendDetailProps) {
                         <div key={key}>
                             <h3>{legends.name}</h3>
                             <p>{legends.function}</p>
-                            <p>{legends.lore}</p>
+                            <p dangerouslySetInnerHTML={{__html: legends.lore}} />
                             <p>{legends.about.age}</p>
                             <p>{legends.about.real_name}</p>
                         </div>
