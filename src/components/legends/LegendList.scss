@@ -1,0 +1,93 @@
+.legend-list {
+    &__name {
+        background: #BEBCBE;
+    }
+    &--button {
+        background: transparent;
+        border: 1px solid #BEBCBE;
+        padding: 5px;
+
+        &__Bangalore {
+            &--active {
+                background: #D58385;
+            }
+            &:hover {
+                background: #D58385;
+            }
+        }
+        &__Bloodhound {
+            &--active {
+                background: #E43035;
+            }
+            &:hover {
+                background: #E43035;
+            }
+        }
+        &__Caustic {
+            &--active {
+                background: #9BC056;
+            }
+            &:hover {
+                background: #9BC056;
+            }
+        }
+        &__Gibraltar {
+            &--active {
+                background: #945C39;
+            }
+            &:hover {
+                background: #945C39;
+            }
+        }
+        &__Lifeline {
+            &--active {
+                background: #A568AB;
+            }
+            &:hover {
+                background: #A568AB;
+            }
+        }
+        &__Mirage {
+            &--active {
+                background: #CB983B;
+            }
+            &:hover {
+                background: #CB983B;
+            }
+        }
+        &__Octane {
+            &--active {
+                background: #A1CF25;
+            }
+            &:hover {
+                background: #A1CF25;
+            }
+        }
+        &__Pathfinder {
+            &--active {
+                background: #5E86AA;
+            }
+            &:hover {
+                background: #5E86AA;
+            }
+        }  
+        &__Wattson {
+            &--active {
+                background: #19408F;
+            }
+            &:hover {
+                background: #19408F;
+            }
+        }
+        &__Wraith {
+            &--active {
+                background: #6349A5;
+            }
+            &:hover {
+                background: #6349A5;
+            }
+        }
+    } 
+}
+
+// 
