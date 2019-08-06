@@ -22,6 +22,25 @@ export default function LegendDetail(props: LegendDetailProps) {
                             <p dangerouslySetInnerHTML={{__html: legends.lore}} />
                             <p>{legends.about.age}</p>
                             <p>{legends.about.real_name}</p>
+                            <div>
+                                <h3>Ability 1</h3>
+                                <p>{legends.abilities.ability_1.type}</p>
+                                <p>{legends.abilities.ability_1.name}</p>
+                                <p>{legends.abilities.ability_1.description}</p>
+                                <p>{legends.abilities.ability_1.secondary_data.damage}</p>
+                                <p>{legends.abilities.ability_1.secondary_data.duration}</p>
+                                <p>{legends.abilities.ability_1.secondary_data.radius}</p>
+                                <p>{legends.abilities.ability_1.secondary_data.cooldown}</p>
+                                <p>{legends.abilities.ability_1.secondary_data.charges}</p>
+                            </div>
+                            <div>
+                                <h3>Ability 2</h3>
+                                <p>{legends.abilities.ability_2.type}</p>
+                                <p>{legends.abilities.ability_2.name}</p>
+                                <p>{legends.abilities.ability_2.description}</p>
+                                <p>{legends.abilities.ability_2.secondary_data.movement}</p>
+                                <p>{legends.abilities.ability_1.secondary_data.duration}</p>
+                            </div>
                         </div>
                     }
                 </>

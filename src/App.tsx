@@ -17,7 +17,9 @@ export default function App() {
 
     return (
         <Router>
-            <Header/>
+            <div className='header-container'>
+                <Header/>
+            </div>
             <div className='content'>
                 {routes.map((route, index) => (
                     <Route

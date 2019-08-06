@@ -42,8 +42,8 @@ export interface LegendListabilities extends LegendListProps {
   }
   ability_3: {
     type: string,
-      name: string,
-      description: string,
+    name: string,
+    description: string,
       secondary_data: {
         damage: number,
         charge_time: string,

@@ -1,22 +1,24 @@
+.logo {
+    display: grid;
+    justify-content: start;
+    align-content: center;
+}
+
 .header { 
     padding: 20px 0 0 40px;
     width: 552px;
-    height: 60px; 
     display: grid;
     grid-auto-flow: column;
-    grid-gap: 1.5em;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    background: black;
+    grid-gap: 0.5em;
 
     &__list-item {
         width: 110px;
         cursor: crosshair;
         position: relative;
-        background: #242328;
+        background: #24232879;
         line-height: 20px;
         padding: 10px 3px;
-        list-style-type: none;
+        list-style-type: none;        
     
         &:before { 
             content: "";
@@ -24,8 +26,8 @@
             background: none;
             border-left: 20px solid transparent;
             border-right: 0px solid transparent;
-            border-top: 40px solid #242328;    
-            left: -19px;
+            border-top: 40px solid #24232879;    
+            left: -20px;
             top: 0;
             z-index: 1;
         }
@@ -37,55 +39,58 @@
             height: 0;
             border-left: 0px solid transparent;
             border-right: 20px solid transparent;
-            border-bottom: 41px solid #242328;
-            right: -19px;
+            border-bottom: 41px solid #24232879;
+            right: -20px;
             top: -1px;
         }
     
         &:hover { 
             cursor: pointer; 
-            background: #9D070A;
+            background: #1f3f69;
     
             &:before { 
-                border-top: 40px solid #9D070A;
+                left: -19px;
+                border-top-color: #1f3f69;
             }
     
             &:after { 
-                border-bottom: 41px solid #9D070A;
+                right: -19px;
+                border-bottom-color: #1f3f69;
             }
 
             & .header__list-item__link {
                 color: #FFF;
 
                 &:before { 
-                    border-top-color: #F53F10;
+                    border-top-color: #3166ac;
                 }
 
                 &:after { 
-                    border-bottom-color: #F53F10;
+                    border-bottom-color: #3166ac
                 }
             }
 
             & .lala {
-                border-color: #F53F10;
+                border-color: #3166ac;
             }
         }   
 
         &__link {
             display: block; 
             text-decoration: none; 
-            color: #FFF; 
+            color: grey;
             text-transform: uppercase; 
             text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); 
             text-align: center;
-            font-size: 14px;
+            font-size: 13px;
+
 
             &:before { 
                 content: "";
                 position: absolute;
                 border-left: 22px solid transparent;
                 border-right: 0px solid transparent;
-                border-top: 44px solid #838283;    
+                border-top: 44px solid #8382836b;    
                 left: -19px;
                 top: 0;
                 z-index: -1;
@@ -97,8 +102,8 @@
                 width: 0;
                 height: 0;
                 border-left: 0px solid transparent;
-                border-right: 25px solid transparent;
-                border-bottom: 44px solid #838283;
+                border-right: 18px solid transparent;
+                border-bottom: 44px solid #8382836b;
                 right: -21px;
                 top: 0px;
                 z-index: -1;
@@ -110,6 +115,6 @@
 .lala {
     position: absolute;
     bottom: -4px;
-    border-bottom: 4px solid #838283;
+    border-bottom: 4px solid #8382836b;
     width: 100%;
 }
