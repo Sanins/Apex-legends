@@ -4,15 +4,22 @@ import './Header.scss';
 
 function Header() { 
   return (
-    <div className='header'>
-      <div className='header__logo'>
-        <h1>My Logo</h1>
-      </div>
-      <div className='header__links'>
-        <Link to={`/`}>Home</Link>
-        <Link to={`/legends`}>Legends</Link>
-      </div>
-    </div>
+    <>  
+      <ul className='header'>
+        <li className='header__list-item'>
+          <Link className='header__list-item__link' to={`/`}><div className='lala'></div>Home</Link>
+        </li>
+        <li className='header__list-item'>
+          <Link className='header__list-item__link' to={`/legends`}><div className='lala'></div>Legends</Link>
+        </li>
+        <li className='header__list-item'>
+          <Link className='header__list-item__link' to={`/weapons`}><div className='lala'></div>Weapons</Link>
+        </li>
+        <li className='header__list-item'>
+          <Link className='header__list-item__link' to={`/items`}><div className='lala'></div>items</Link>
+        </li>
+      </ul>
+    </>
   );
 }
 
