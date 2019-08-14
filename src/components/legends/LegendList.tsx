@@ -9,18 +9,21 @@ const scrollToRef = (ref: any) => window.scrollTo(0, ref.current.offsetTop)
 const useMountEffect = (fun: any) => useEffect(fun, [])
 
 const LegendList: React.FC<{}> = () => {
+
   const service = useLegendsService();
 
-  const [activeKey, setActiveKey] = React.useState(0);
+  const [activeKey, setActiveKey] = React.useState(-1);
 
   const myRef = useRef(null)
 
   useMountEffect(() => scrollToRef(myRef)) // Scroll on mount
   
-  const toggleSelected = (key:any) => () => {
+  const toggleSelected = (key:any, legends:any) => () => {
     setActiveKey(key);
     scrollToRef(myRef);
-    document.body.style.backgroundColor = 'green'
+
+    document.body.className = '';
+    document.body.classList.toggle(legends);
   };
   
   return (
@@ -39,7 +42,7 @@ const LegendList: React.FC<{}> = () => {
                 <button 
                   className={clsx(key === activeKey && 'legend-list--button__' + legends.name + '--active', 'legend-list--button legend-list--button__' + legends.name)} 
                   key={key} 
-                  onClick={toggleSelected(key)}
+                  onClick={toggleSelected(key, legends.name)}
                 >
                   <img 
                     style={{width: '60px'}} 
