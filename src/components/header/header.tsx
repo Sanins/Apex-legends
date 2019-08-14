@@ -5,7 +5,7 @@ import './Header.scss';
 function Header() { 
   return (
     <>
-      <div className='logo'>My logo</div>
+      <div className='logo'>my logo</div>
       <ul className='header'>
         <li className='header__list-item'>
           <Link className='header__list-item__link' to={`/`}><div className='lala'></div>Home</Link>

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Service } from '../../Types/Service';
-import { Legends } from '../../Types/Types';
+import { LegendListProps } from '../../Types/Types';
 
 const useLegendsService = () => {
-  const [result, setResult] = useState<Service<Legends>>({
+  const [result, setResult] = useState<Service<LegendListProps>>({
     status: 'loading'
   });
 
@@ -13,6 +13,8 @@ const useLegendsService = () => {
       .then(response => setResult({ status: 'loaded', payload: response }))
       .catch(error => setResult({ status: 'error', error }));
   }, []);
+
+  console.log(result);
 
   return result;
 };

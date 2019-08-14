@@ -1,8 +1,3 @@
-export interface Legends {
-  name: string;
-  function: string;
-}
-
 export interface LegendListProps {
   name: string;
   function: string;
@@ -44,13 +39,13 @@ export interface LegendListabilities extends LegendListProps {
     type: string,
     name: string,
     description: string,
-      secondary_data: {
-        damage: number,
-        charge_time: string,
-        radius: string,
-        slow: string,
-        detonation_time: string,
-        duration: string
-      }
+    secondary_data: {
+      damage: number,
+      charge_time: string,
+      radius: string,
+      slow: string,
+      detonation_time: string,
+      duration: string
+    }
   }
 }
