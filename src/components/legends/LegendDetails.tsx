@@ -1,6 +1,7 @@
 import React from "react";
 import useLegendsService from "./Services/UseLegendsService";
 import { LegendListProps } from "../Types/Types";
+import './LegendDetails.scss';
 
 interface LegendDetailProps {
     legendKey: number;
@@ -16,41 +17,54 @@ export default function LegendDetail(props: LegendDetailProps) {
                 <>
                     {key === props.legendKey &&
                         <div key={key}>
-                            <h3>{legends.name}</h3>
-                            <p>{legends.function}</p>
-                            <p dangerouslySetInnerHTML={{__html: legends.lore}} />
-                            <p>{legends.about.age}</p>
-                            <p>{legends.about.real_name}</p>
-                            <div>
-                                <h3>Ability 1</h3>
-                                <p>{legends.abilities.ability_1.type}</p>
-                                <p>{legends.abilities.ability_1.name}</p>
-                                <p>{legends.abilities.ability_1.description}</p>
-                                <p>{legends.abilities.ability_1.secondary_data ? legends.abilities.ability_1.secondary_data.damage : ''}</p>
-                                <p>{legends.abilities.ability_1.secondary_data ? legends.abilities.ability_1.secondary_data.duration : ''}</p>
-                                <p>{legends.abilities.ability_1.secondary_data ? legends.abilities.ability_1.secondary_data.radius : ''}</p>
-                                <p>{legends.abilities.ability_1.secondary_data ? legends.abilities.ability_1.secondary_data.cooldown : ''}</p>
-                                <p>{legends.abilities.ability_1.secondary_data ? legends.abilities.ability_1.secondary_data.charges : ''}</p>
+                            <div className='legend-details__name'>
+                                <h3>{legends.name} - {legends.about.real_name}</h3>
                             </div>
-                            <div>
-                                <h3>Ability 2</h3>
-                                <p>{legends.abilities.ability_2.type}</p>
-                                <p>{legends.abilities.ability_2.name}</p>
-                                <p>{legends.abilities.ability_2.description}</p>
-                                <p>{legends.abilities.ability_2.secondary_data ? legends.abilities.ability_2.secondary_data.movement : ''}</p>
-                                <p>{legends.abilities.ability_2.secondary_data ? legends.abilities.ability_2.secondary_data.duration : ''}</p>
+                            <div className='legend-details__function'>
+                                <p>{legends.function} - age: {legends.about.age}</p>
                             </div>
-                            <div>
-                                <h3>Ability 3</h3>
-                                <p>{legends.abilities.ability_3.type}</p>
-                                <p>{legends.abilities.ability_3.name}</p>
-                                <p>{legends.abilities.ability_3.description}</p>
-                                <p>{legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.damage : ''}</p>
-                                <p>{legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.charge_time : ''}</p>
-                                <p>{legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.radius : ''}</p>
-                                <p>{legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.slow : ''}</p>
-                                <p>{legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.detonation_time : ''}</p>
-                                <p>{legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.duration : ''}</p>
+                            <div className='legend-details__description'>
+                                <p dangerouslySetInnerHTML={{__html: legends.lore}} />
+                            </div>
+                            <div className='legend-details__abilities'>
+                                <div>
+                                    <h3>Ability 1</h3>
+                                    <ul>
+                                        <li className='ability__list-item'>Type: <span className='ability__list-item--span'>{legends.abilities.ability_1.type}</span></li>
+                                        <li className='ability__list-item'>Name: <span className='ability__list-item--span'>{legends.abilities.ability_1.name}</span></li>
+                                        <li className='ability__list-item'>Description: <span className='ability__list-item--span'>{legends.abilities.ability_1.description}</span></li>
+                                        <li className='ability__list-item'>Damage: <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_1.secondary_data ? legends.abilities.ability_1.secondary_data.damage || 'N/A' : 'N/A')}}/></li> 
+                                        <li className='ability__list-item'>Duration: <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_1.secondary_data ? legends.abilities.ability_1.secondary_data.duration || 'N/A' : 'N/A')}}/></li> 
+                                        <li className='ability__list-item'>Radius: <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_1.secondary_data ? legends.abilities.ability_1.secondary_data.radius || 'N/A' : 'N/A')}}/></li>
+                                        <li className='ability__list-item'>Cooldown: <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_1.secondary_data ? legends.abilities.ability_1.secondary_data.cooldown || 'N/A' : 'N/A')}}/></li>
+                                    </ul>                              
+                                </div>
+                                <div>
+                                    <h3>Ability 2</h3>
+                                    <ul>
+                                        <li className='ability__list-item'>Type: <span className='ability__list-item--span'>{legends.abilities.ability_2.type}</span></li>
+                                        <li className='ability__list-item'>Name: <span className='ability__list-item--span'>{legends.abilities.ability_2.name}</span></li>
+                                        <li className='ability__list-item'>Description: <span className='ability__list-item--span'>{legends.abilities.ability_2.description}</span></li>
+                                        <li className='ability__list-item'>Movement: <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_2.secondary_data ? legends.abilities.ability_2.secondary_data.movement || 'N/A' : 'N/A')}}/></li>
+                                        <li className='ability__list-item'>Duration: <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_2.secondary_data ? legends.abilities.ability_2.secondary_data.duration || 'N/A' : 'N/A')}}/></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Ability 3</h3>
+                                    <ul>
+                                        <li className='ability__list-item'>Type: <span className='ability__list-item--span'>{legends.abilities.ability_3.type}</span></li>
+                                        <li className='ability__list-item'>Name: <span className='ability__list-item--span'>{legends.abilities.ability_3.name}</span></li>
+                                        <li className='ability__list-item'>Description: <span className='ability__list-item--span'>{legends.abilities.ability_3.description}</span></li>
+                                        <li className='ability__list-item'>Damage: <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.damage || 'N/A' : 'N/A')}} /></li>
+                                        <li className='ability__list-item'>Charge time: <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.charge_time || 'N/A' : 'N/A')}}/></li>
+                                        <li className='ability__list-item'>Radius: <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.radius || 'N/A' : 'N/A')}}/></li>
+                                        <li className='ability__list-item'>Slow: <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.slow || 'N/A' : 'N/A')}}/></li>
+                                        <li className='ability__list-item'>Detonation time: <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.detonation_time || 'N/A' : 'N/A')}}/></li>
+                                        <li className='ability__list-item'>Duration: 
+                                            <span className='ability__list-item--span' dangerouslySetInnerHTML={{__html: (legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.duration || 'N/A' : 'N/A')}}/>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     }

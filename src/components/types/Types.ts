@@ -19,7 +19,7 @@ export interface LegendListabilities extends LegendListProps {
     name: string,
     description: string,
     secondary_data: {
-      damage: number,
+      damage: string,
       duration: string,
       radius: string,
       cooldown: string,
@@ -40,7 +40,7 @@ export interface LegendListabilities extends LegendListProps {
     name: string,
     description: string,
     secondary_data: {
-      damage: number,
+      damage: string,
       charge_time: string,
       radius: string,
       slow: string,

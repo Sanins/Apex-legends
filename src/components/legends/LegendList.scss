@@ -1,4 +1,8 @@
 .legend-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    
     &__name {
         background: #BEBCBE;
     }
@@ -90,4 +94,7 @@
     } 
 }
 
-// 
+.href-event-location {
+    position: absolute;
+    top: 0;
+}

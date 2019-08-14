@@ -24,7 +24,7 @@ const LegendList: React.FC<{}> = () => {
   
   return (
     <>
-      <div ref={myRef} className='main'></div>
+      <div ref={myRef} className='href-event-location'></div>
       <div>   
         {service.status === 'loading' && (
           <p>Loading</p>
@@ -33,7 +33,7 @@ const LegendList: React.FC<{}> = () => {
       <div>
         {service.status === 'loaded' &&
           <div>
-            <div>
+            <div className='legend-list'>
               {service.payload.map((legends: LegendListProps, key:any) => (
                 <button 
                   className={clsx(key === activeKey && 'legend-list--button__' + legends.name + '--active', 'legend-list--button legend-list--button__' + legends.name)} 
