@@ -20,6 +20,7 @@ const LegendList: React.FC<{}> = () => {
   const toggleSelected = (key:any) => () => {
     setActiveKey(key);
     scrollToRef(myRef);
+    document.body.style.backgroundColor = 'green'
   };
   
   return (

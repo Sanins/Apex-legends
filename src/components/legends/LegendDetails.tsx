@@ -18,13 +18,14 @@ export default function LegendDetail(props: LegendDetailProps) {
                     {key === props.legendKey &&
                         <div key={key}>
                             <div className='legend-details__name'>
-                                <h3>{legends.name} - {legends.about.real_name}</h3>
+                                <h2>{legends.name} - {legends.about.real_name}</h2>
                             </div>
                             <div className='legend-details__function'>
-                                <p>{legends.function} - age: {legends.about.age}</p>
+                                <h3>{legends.function} - age: {legends.about.age}</h3>
                             </div>
                             <div className='legend-details__description'>
-                                <p dangerouslySetInnerHTML={{__html: legends.lore}} />
+                                <h4>Description:</h4>
+                                <span dangerouslySetInnerHTML={{__html: legends.lore}} />
                             </div>
                             <div className='legend-details__abilities'>
                                 <div>
