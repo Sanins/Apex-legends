@@ -7,18 +7,18 @@ function Header() {
     <>
       <div className='logo'>my logo</div>
       <ul className='header'>
-        <li className='header__list-item'>
-          <NavLink className='header__list-item__link' activeClassName="header__list-item__link--selected" exact to={`/`}><div className='lala'></div>Home</NavLink>
-        </li>
-        <li className='header__list-item'>
-          <NavLink className='header__list-item__link' activeClassName="header__list-item__link--selected" exact to={`/legends`}><div className='lala'></div>Legends</NavLink>
-        </li>
-        <li className='header__list-item'>
-          <NavLink className='header__list-item__link' activeClassName="header__list-item__link--selected" exact to={`/weapons`}><div className='lala'></div>Weapons</NavLink>
-        </li>
-        <li className='header__list-item'>
-          <NavLink className='header__list-item__link' activeClassName="header__list-item__link--selected" exact to={`/items`}><div className='lala'></div>items</NavLink>
-        </li>
+      <NavLink activeClassName="header__list-item--selected" exact to={`/`} className='header__list-item'>
+          <a className='header__list-item__link' ><div className='lala'></div>Home</a>
+        </NavLink>
+        <NavLink activeClassName="header__list-item--selected" exact to={`/legends`} className='header__list-item'>
+          <a className='header__list-item__link' ><div className='lala'></div>legends</a>
+        </NavLink>
+        <NavLink activeClassName="header__list-item--selected" exact to={`/weapons`} className='header__list-item'>
+          <a className='header__list-item__link' ><div className='lala'></div>Weapons</a>
+        </NavLink>
+        <NavLink activeClassName="header__list-item--selected" exact to={`/items`} className='header__list-item'>
+          <a className='header__list-item__link' ><div className='lala'></div>items</a>
+        </NavLink>
       </ul>
     </>
   );

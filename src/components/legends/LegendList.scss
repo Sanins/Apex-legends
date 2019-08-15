@@ -34,7 +34,7 @@
             background-position: 211px 276px;
 
             &--active {
-                box-shadow: 0px 0px 3px 6px #0000004f;
+                box-shadow: 0px 0px 0px 3px #f2ff2e;
             }
         }
         &__Bloodhound {
@@ -43,7 +43,7 @@
             background-position: 197px 281px;
 
             &--active {
-                box-shadow: 0px 0px 3px 6px #0000004f;
+                box-shadow: 0px 0px 0px 3px #f2ff2e;
             }
         }
         &__Caustic {
@@ -52,7 +52,7 @@
             background-position: 178px 290px;
 
             &--active {
-                box-shadow: 0px 0px 3px 6px #0000004f;
+                box-shadow: 0px 0px 0px 3px #f2ff2e;
             }
         }
         &__Gibraltar {
@@ -61,7 +61,7 @@
             background-position: 206px 289px;
 
             &--active {
-                box-shadow: 0px 0px 3px 6px #0000004f;
+                box-shadow: 0px 0px 0px 3px #f2ff2e;
             }
         }
         &__Lifeline {
@@ -70,13 +70,17 @@
             background-position: 191px 270px;
 
             &--active {
-                box-shadow: 0px 0px 3px 6px #0000004f;
+                box-shadow: 0px 0px 0px 3px #f2ff2e;
             }
         }
         &__Mirage {
             background-image: url(Images/Mirage.png);
             background-size: 358%;
             background-position: 205px 262px;
+
+            &--active {
+                box-shadow: 0px 0px 0px 3px #f2ff2e;
+            }
         }
 
         &__Octane {
@@ -85,7 +89,7 @@
             background-position: 157px 292px;
 
             &--active {
-                box-shadow: 0px 0px 3px 6px #0000004f;
+                box-shadow: 0px 0px 0px 3px #f2ff2e;
             }
         }
         &__Pathfinder {
@@ -94,7 +98,7 @@
             background-position: 191px 272px;
 
             &--active {
-                box-shadow: 0px 0px 3px 6px #0000004f;
+                box-shadow: 0px 0px 0px 3px #f2ff2e;
             }
         }  
         &__Wattson {
@@ -103,7 +107,7 @@
             background-position: 175px 293px;
 
             &--active {
-                box-shadow: 0px 0px 3px 6px #0000004f;
+                box-shadow: 0px 0px 0px 3px #f2ff2e;
             }
         }
         &__Wraith {
@@ -112,7 +116,7 @@
             background-position: 185px 266px;
 
             &--active {
-                box-shadow: 0px 0px 3px 6px #0000004f;
+                box-shadow: 0px 0px 0px 3px #f2ff2e;
             }
         }
     } 

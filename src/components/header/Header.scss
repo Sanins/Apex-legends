@@ -12,14 +12,15 @@
     grid-gap: 0.5em;
 
     &__list-item {
+        text-decoration: none;
         width: 110px;
         cursor: crosshair;
         position: relative;
         background: #24232879;
         line-height: 20px;
         padding: 10px 3px;
-        list-style-type: none;        
-    
+        list-style-type: none;  
+        
         &:before { 
             content: "";
             position: absolute;
@@ -75,6 +76,34 @@
             }
         }   
 
+        &--selected {
+            background: #1f3f69;
+
+            &:before { 
+                border-top-color: #1f3f69;
+            }
+
+            &:after { 
+                border-bottom-color: #1f3f69;
+            }
+
+            & .header__list-item__link {
+                color: #FFF;
+
+                &:before { 
+                    border-top-color: #3166ac;
+                }
+
+                &:after { 
+                    border-bottom-color: #3166ac
+                }
+            }
+
+            & .lala {
+                border-color: #3166ac;
+            }
+        }
+
         &__link {
             display: block; 
             text-decoration: none; 
@@ -83,10 +112,6 @@
             text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); 
             text-align: center;
             font-size: 13px;
-
-            &--selected {
-                background: white;
-            }
 
             &:before { 
                 content: "";
