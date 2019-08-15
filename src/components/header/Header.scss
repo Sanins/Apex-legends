@@ -84,6 +84,9 @@
             text-align: center;
             font-size: 13px;
 
+            &--selected {
+                background: white;
+            }
 
             &:before { 
                 content: "";

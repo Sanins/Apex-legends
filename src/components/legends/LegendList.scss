@@ -1,12 +1,14 @@
 .legend-list-container {
-    padding: 20px 10%;
-    animation: gradientBG 20s ease infinite;
+    animation: gradientBG 15s ease infinite;
 }
 
 .legend-list {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     margin-bottom: 10px;
+    background: #000000;
+    padding: 10px 10% 10px 10%;
+    justify-items: space-between;
     
     &__name {
         text-transform: uppercase;
@@ -16,6 +18,7 @@
         bottom: 0;
         width: 100%;
     }
+    
     &--button {
         background: transparent;
         border: 2px solid #ffffff;
@@ -133,42 +136,51 @@
 }
 
 .Bangalore {
-    background: linear-gradient(-45deg, #CF8055, #CF8055, #8E6643, #43443F);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
 }
 
 .Bloodhound {
-    background: #E43035;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
 }
 
 .Caustic {
-    background: #9BC056;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
 }
 
 .Gibraltar {
-    background: #945C39;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
 }
 
 .Lifeline {
-    background: #A568AB;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
 }
 
 .Mirage {
-    background: #CB983B;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
 }
 
 .Octane {
-    background: #A1CF25;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
 }
 
 .Pathfinder {
-    background: #5E86AA;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
 }  
 
 .Wattson {
-    background: #19408F;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
 }
 
 .Wraith {
-    background: #6349A5;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
 }

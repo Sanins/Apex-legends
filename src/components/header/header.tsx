@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './Header.scss';
 
 function Header() { 
@@ -8,16 +8,16 @@ function Header() {
       <div className='logo'>my logo</div>
       <ul className='header'>
         <li className='header__list-item'>
-          <Link className='header__list-item__link' to={`/`}><div className='lala'></div>Home</Link>
+          <NavLink className='header__list-item__link' activeClassName="header__list-item__link--selected" exact to={`/`}><div className='lala'></div>Home</NavLink>
         </li>
         <li className='header__list-item'>
-          <Link className='header__list-item__link' to={`/legends`}><div className='lala'></div>Legends</Link>
+          <NavLink className='header__list-item__link' activeClassName="header__list-item__link--selected" exact to={`/legends`}><div className='lala'></div>Legends</NavLink>
         </li>
         <li className='header__list-item'>
-          <Link className='header__list-item__link' to={`/weapons`}><div className='lala'></div>Weapons</Link>
+          <NavLink className='header__list-item__link' activeClassName="header__list-item__link--selected" exact to={`/weapons`}><div className='lala'></div>Weapons</NavLink>
         </li>
         <li className='header__list-item'>
-          <Link className='header__list-item__link' to={`/items`}><div className='lala'></div>items</Link>
+          <NavLink className='header__list-item__link' activeClassName="header__list-item__link--selected" exact to={`/items`}><div className='lala'></div>items</NavLink>
         </li>
       </ul>
     </>

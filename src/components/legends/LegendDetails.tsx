@@ -27,7 +27,6 @@ export default function LegendDetail(props: LegendDetailProps) {
                                 <div className='legend-details__features'>
                                     <div className='legend-details__character-image'>
                                         <img 
-                                            style={{width: '400px'}} 
                                             src={require(`./Images/${legends.name}.png`)}
                                         />
                                     </div>
@@ -37,7 +36,7 @@ export default function LegendDetail(props: LegendDetailProps) {
                                             <h4>Age: {legends.about.age}</h4>
                                         </div>
                                         <h4>Description:</h4>
-                                        <span dangerouslySetInnerHTML={{__html: legends.lore}} />
+                                        <span className='description--span' dangerouslySetInnerHTML={{__html: legends.lore}} />
                                     </div>
                                 </div>
                                 <div className='legend-details__abilities'>

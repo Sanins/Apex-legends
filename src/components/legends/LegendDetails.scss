@@ -14,12 +14,22 @@
     &__character-image {
         display: flex;
         justify-content: flex-end;
+
+        img {
+            width: 400px;
+            margin-top: -70px;
+        }
     }
 
     &__description {
         padding: 10px;
         font-size: 12px;
         line-height: 24px;
+
+        h4 {
+            font-size: 20px;
+            padding: 5px 0;
+        }
 
         p p {
             margin-bottom: 10px;
@@ -29,15 +39,15 @@
     &__features {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        align-items: center;
     }
 
     &__headings {
         background: #0000004f;
-        padding: 20px 0 50px 0;
+        padding: 20px 10% 50px 10%;
         margin-bottom: 20px;
 
         &__function {
+            position: relative;
             margin-bottom: 10px;
             font-size: 30px;   
             text-align: center;   
@@ -62,5 +72,10 @@
             font-weight: normal;
             font-size: 12px;
         }
+    }
+}
+.description--span {
+    p {
+        margin-bottom: 10px;
     }
 }
