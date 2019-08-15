@@ -1,98 +1,115 @@
 .legend-list-container {
     padding: 20px 10%;
+    animation: gradientBG 20s ease infinite;
 }
 
 .legend-list {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
     margin-bottom: 10px;
     
     &__name {
-        background: #BEBCBE;
+        text-transform: uppercase;
+        background: #ffffff;
+        padding: 2px 5px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
     &--button {
         background: transparent;
-        border: 1px solid #BEBCBE;
-        padding: 5px;
+        border: 2px solid #ffffff;
+        margin: 5px;
+        height: 100px;
+        position: relative;
+        width: 90px;
+        outline-color: transparent;
 
         &__Bangalore {
+            background-image: url(Images/Bangalore.png);
+            background-size: 358%;
+            background-position: 211px 276px;
+
             &--active {
-                background: #D58385;
-            }
-            &:hover {
-                background: #D58385;
+                box-shadow: 0px 0px 3px 6px #0000004f;
             }
         }
         &__Bloodhound {
+            background-image: url(Images/Bloodhound.png);
+            background-size: 358%;
+            background-position: 197px 281px;
+
             &--active {
-                background: #E43035;
-            }
-            &:hover {
-                background: #E43035;
+                box-shadow: 0px 0px 3px 6px #0000004f;
             }
         }
         &__Caustic {
+            background-image: url(Images/Caustic.png);
+            background-size: 358%;
+            background-position: 178px 290px;
+
             &--active {
-                background: #9BC056;
-            }
-            &:hover {
-                background: #9BC056;
+                box-shadow: 0px 0px 3px 6px #0000004f;
             }
         }
         &__Gibraltar {
+            background-image: url(Images/Gibraltar.png);
+            background-size: 358%;
+            background-position: 206px 289px;
+
             &--active {
-                background: #945C39;
-            }
-            &:hover {
-                background: #945C39;
+                box-shadow: 0px 0px 3px 6px #0000004f;
             }
         }
         &__Lifeline {
+            background-image: url(Images/Lifeline.png);
+            background-size: 358%;
+            background-position: 191px 270px;
+
             &--active {
-                background: #A568AB;
-            }
-            &:hover {
-                background: #A568AB;
+                box-shadow: 0px 0px 3px 6px #0000004f;
             }
         }
         &__Mirage {
-            &--active {
-                background: #CB983B;
-            }
-            &:hover {
-                background: #CB983B;
-            }
+            background-image: url(Images/Mirage.png);
+            background-size: 358%;
+            background-position: 205px 262px;
         }
+
         &__Octane {
+            background-image: url(Images/Octane.png);
+            background-size: 358%;
+            background-position: 157px 292px;
+
             &--active {
-                background: #A1CF25;
-            }
-            &:hover {
-                background: #A1CF25;
+                box-shadow: 0px 0px 3px 6px #0000004f;
             }
         }
         &__Pathfinder {
+            background-image: url(Images/Pathfinder.png);
+            background-size: 358%;
+            background-position: 191px 272px;
+
             &--active {
-                background: #5E86AA;
-            }
-            &:hover {
-                background: #5E86AA;
+                box-shadow: 0px 0px 3px 6px #0000004f;
             }
         }  
         &__Wattson {
+            background-image: url(Images/Wattson.png);
+            background-size: 358%;
+            background-position: 175px 293px;
+
             &--active {
-                background: #19408F;
-            }
-            &:hover {
-                background: #19408F;
+                box-shadow: 0px 0px 3px 6px #0000004f;
             }
         }
         &__Wraith {
+            background-image: url(Images/Wraith.png);
+            background-size: 358%;
+            background-position: 185px 266px;
+
             &--active {
-                background: #6349A5;
-            }
-            &:hover {
-                background: #6349A5;
+                box-shadow: 0px 0px 3px 6px #0000004f;
             }
         }
     } 
@@ -101,4 +118,57 @@
 .href-event-location {
     position: absolute;
     top: 0;
+}
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.Bangalore {
+    background: linear-gradient(-45deg, #CF8055, #CF8055, #8E6643, #43443F);
+    background-size: 400% 400%;
+}
+
+.Bloodhound {
+    background: #E43035;
+}
+
+.Caustic {
+    background: #9BC056;
+}
+
+.Gibraltar {
+    background: #945C39;
+}
+
+.Lifeline {
+    background: #A568AB;
+}
+
+.Mirage {
+    background: #CB983B;
+}
+
+.Octane {
+    background: #A1CF25;
+}
+
+.Pathfinder {
+    background: #5E86AA;
+}  
+
+.Wattson {
+    background: #19408F;
+}
+
+.Wraith {
+    background: #6349A5;
 }

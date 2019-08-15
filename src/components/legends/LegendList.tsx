@@ -45,10 +45,6 @@ const LegendList: React.FC<{}> = () => {
                   key={key} 
                   onClick={toggleSelected(key, legends.name)}
                 >
-                  <img 
-                    style={{width: '60px'}} 
-                    src={require(`./Images/${legends.name}.png`)}
-                  />
                   <div className='legend-list__name'>
                     {legends.name}                    
                   </div>
