@@ -14,6 +14,8 @@ const LegendList: React.FC<{}> = () => {
 
   const [activeKey, setActiveKey] = React.useState(-1);
 
+  const [legendsName, setLegendsName] = React.useState('');
+
   const myRef = useRef(null)
 
   useMountEffect(() => scrollToRef(myRef)) // Scroll on mount
@@ -22,8 +24,7 @@ const LegendList: React.FC<{}> = () => {
     setActiveKey(key);
     scrollToRef(myRef);
 
-    document.body.className = '';
-    document.body.classList.toggle(legends);
+    setLegendsName(legends)
   };
   
   return (
@@ -34,7 +35,7 @@ const LegendList: React.FC<{}> = () => {
           <p>Loading</p>
         )}
       </div>
-      <div>
+      <div className={clsx(legendsName, 'legend-list-container')}>
         {service.status === 'loaded' &&
           <div>
             <div className='legend-list'>

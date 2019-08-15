@@ -20,16 +20,16 @@ export default function App() {
             <div className='header-container'>
                 <Header/>
             </div>
-            <div className='content'>
-                {routes.map((route, index) => (
-                    <Route
-                        key={index}
-                        path={route.path}
-                        exact={route.exact}
-                        component={route.main}
-                    />
-                ))}
-            </div>
+            <>
+            {routes.map((route, index) => (
+                <Route
+                    key={index}
+                    path={route.path}
+                    exact={route.exact}
+                    component={route.main}
+                />
+            ))}
+            </>
             <Footer/>
         </Router>
     )
