@@ -1,11 +1,12 @@
 .legend-list-container {
     animation: gradientBG 15s ease infinite;
+    padding-top: 5px;
 }
 
 .legend-list {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     background: #000000;
     padding: 10px 10% 10px 10%;
 
