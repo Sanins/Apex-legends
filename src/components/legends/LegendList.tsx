@@ -48,7 +48,7 @@ const LegendList: React.FC<{}> = () => {
                   <div className='legend-list__name'>
                     {legends.name}                    
                   </div>
-                </button>           
+                </button>        
               ))}
             </div>
             <div>
