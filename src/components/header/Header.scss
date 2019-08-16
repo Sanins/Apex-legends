@@ -6,6 +6,7 @@
 
 .header { 
     padding: 20px 0 0 40px;
+    margin-bottom: -5px;
     width: 552px;
     display: grid;
     grid-auto-flow: column;
@@ -39,8 +40,6 @@
     }
 
     &__list-item {
-        background-color: #24232879;
-        border-bottom: 5px solid #8382836b;
         width: 150px;
         padding: 20px;
         transform: skew(27deg, 0deg);
@@ -65,7 +64,7 @@
 
         &--selected {
             background: #1f3f69;
-            border-color: #3166ac;
+            border-bottom: 5px solid #3166ac;
 
             & .header__list-item__link {
                 color: #FFFFFF;
