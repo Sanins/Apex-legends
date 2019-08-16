@@ -21,14 +21,14 @@ export default function App() {
                 <Header/>
             </div>
             <>
-            {routes.map((route, index) => (
-                <Route
-                    key={index}
-                    path={route.path}
-                    exact={route.exact}
-                    component={route.main}
-                />
-            ))}
+                {routes.map((route, index) => (
+                    <Route
+                        key={index}
+                        path={route.path}
+                        exact={route.exact}
+                        component={route.main}
+                    />
+                ))}
             </>
             <Footer/>
         </Router>
