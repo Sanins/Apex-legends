@@ -24,16 +24,16 @@ function Header() {
       <button onClick={toggleHamburger()} className='header__mobile-hamburger'>Show/hide</button>
         <ul className={clsx('header', !hamburgerOpenClose && 'header__close', hamburgerOpenClose && 'header__open')}>
           <NavLink onClick={closeHamburger()} activeClassName="header__list-item--selected" exact to={`/`} className='header__list-item'>
-            <a className='header__list-item__link' ><div className='lala'></div>Home</a>
+            <div className='header__list-item__link' >Home</div>
           </NavLink>
           <NavLink onClick={closeHamburger()} activeClassName="header__list-item--selected" exact to={`/legends`} className='header__list-item'>
-            <a className='header__list-item__link' ><div className='lala'></div>legends</a>
+            <div className='header__list-item__link' >Legends</div>
           </NavLink>
           <NavLink onClick={closeHamburger()} activeClassName="header__list-item--selected" exact to={`/weapons`} className='header__list-item'>
-            <a className='header__list-item__link' ><div className='lala'></div>Weapons</a>
+            <div className='header__list-item__link' >Weapons</div>
           </NavLink>
           <NavLink onClick={closeHamburger()} activeClassName="header__list-item--selected" exact to={`/items`} className='header__list-item'>
-            <a className='header__list-item__link' ><div className='lala'></div>items</a>
+            <div className='header__list-item__link' >items</div>
           </NavLink>
         </ul>
     </>
