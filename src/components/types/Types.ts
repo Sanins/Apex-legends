@@ -1,16 +1,6 @@
 export interface LegendListProps {
   name: string;
-  function: string;
-  lore: string;
-  about: {
-    real_name: string;
-    age: number;
-  };
   abilities: LegendListabilities;
-  badges: [{
-    name: string;
-    desc: string;
-  }]
 }
 
 export interface LegendListabilities extends LegendListProps {
