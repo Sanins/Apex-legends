@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import LegendList from './components/Legends/LegendList';
 import Home from './components/Home/Home';
 
+
 const routes = [
     {
         path: "/legends",
