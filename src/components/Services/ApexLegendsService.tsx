@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Service } from '../Types/Service';
 import { LegendListProps } from '../Types/Types';
 
-const ApexLegendsService = (serviceOption:'legends') => {
+const ApexLegendsService = (serviceOption:'legends' | 'weapons') => {
   const [result, setResult] = useState<Service<LegendListProps>>({
     status: 'loading'
   });

@@ -1,3 +1,7 @@
+export interface WeaponListProps {
+  name: string;
+}
+
 export interface LegendListProps {
   name: string;
   abilities: LegendListabilities;
