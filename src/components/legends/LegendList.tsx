@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import useLegendsService from "./Services/UseLegendsService";
+import ApexLegendsService from "../Services/ApexLegendsService";
 import { LegendListProps } from '../Types/Types';
 import LegendDetail from './LegendDetails';
 import './LegendList.scss';
@@ -10,7 +10,7 @@ const useMountEffect = (fun: any) => useEffect(fun, [])
 
 const LegendList: React.FC<{}> = () => {
 
-  const service = useLegendsService();
+  const service = ApexLegendsService('legends');
 
   const [activeKey, setActiveKey] = React.useState(-1);
 

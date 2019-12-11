@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Service } from '../../Types/Service';
-import { LegendListProps } from '../../Types/Types';
+import { Service } from '../Types/Service';
+import { LegendListProps } from '../Types/Types';
 
-const useLegendsService = () => {
+const ApexLegendsService = (serviceOption:'legends') => {
   const [result, setResult] = useState<Service<LegendListProps>>({
     status: 'loading'
   });
 
   useEffect(() => {
-    fetch('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/legends.json')
+    fetch(`https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/${serviceOption}.json`)
       .then(response => response.json())
       .then(response => setResult({ status: 'loaded', payload: response }))
       .catch(error => setResult({ status: 'error', error }));
@@ -19,4 +19,4 @@ const useLegendsService = () => {
   return result;
 };
 
-export default useLegendsService;
+export default ApexLegendsService;

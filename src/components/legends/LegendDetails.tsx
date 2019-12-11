@@ -1,5 +1,5 @@
 import React from "react";
-import useLegendsService from "./Services/UseLegendsService";
+import ApexLegendsService from "../Services/ApexLegendsService";
 import { LegendListProps } from "../Types/Types";
 import './LegendDetails.scss';
 
@@ -8,7 +8,7 @@ interface LegendDetailProps {
 }
 
 export default function LegendDetail(props: LegendDetailProps) {
-    const service = useLegendsService();
+    const service = ApexLegendsService('legends');
 
     if (service.status === 'loaded') {
         return (
