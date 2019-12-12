@@ -65,8 +65,16 @@ export default function Header() {
             exact to={`/legends`}
             className='header__list-item'
           >
-            Legend
+            Legends
           </NavLink>   
+          <NavLink 
+            onClick={btnClick.close()}
+            activeClassName="header__list-item--selected"
+            exact to={`/items`}
+            className='header__list-item'
+          >
+            Items
+          </NavLink> 
         </ul>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import ApexLegendsService from "../Services/ApexLegendsService";
-import { WeaponListProps } from "../Types/Types";
+import ApexLegendsService from "../../Services/ApexLegendsService";
+import { WeaponListProps } from "../../Types/Types";
 import { Link } from "react-router-dom";
 import './WeaponList.scss';
 
