@@ -57,7 +57,7 @@ export default function Header() {
             exact to={`/weapons`} 
             className='header__list-item'
           >
-            Weapons & Items
+            Weapons
           </NavLink>
           <NavLink 
             onClick={btnClick.close()}
