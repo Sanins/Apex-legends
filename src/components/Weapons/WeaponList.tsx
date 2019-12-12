@@ -2,9 +2,9 @@ import React from "react";
 import ApexLegendsService from "../Services/ApexLegendsService";
 import { WeaponListProps } from "../Types/Types";
 import { Link } from "react-router-dom";
+import './WeaponList.scss';
 
 const WeaponList: React.FC<{}> = () => {
-
   const service = ApexLegendsService('weapons');
   
   return (
@@ -14,12 +14,15 @@ const WeaponList: React.FC<{}> = () => {
       )}
 
       {service.status === 'loaded' &&
-        <div className='legend-list'>
-          {service.payload.map((weapons: WeaponListProps) => (
-              <Link to={`/weapons/${weapons.name}`}>
-                {weapons.name}                    
-              </Link>   
-          ))}
+        <div className='weapon-list'>
+          <h1>Weapons</h1>
+          <div className='weapon-list__list-of-weapons'>
+            {service.payload.map((weapons: WeaponListProps) => (
+                <Link to={`/weapons/${weapons.name}`}>
+                  {weapons.name}                    
+                </Link>   
+            ))}
+          </div>
         </div>
       }
 

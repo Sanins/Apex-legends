@@ -14,9 +14,7 @@ export default function App() {
         <Router>
             <div className="page-container">
                 <div className="content-wrap">
-                    <div className='header-container'>
-                        <Header/>
-                    </div>
+                    <Header/>
                     <>
                         <Switch>
                             <Route exact={true} path='/legends' component={LegendList} />

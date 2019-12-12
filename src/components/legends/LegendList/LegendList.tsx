@@ -17,11 +17,14 @@ const LegendList: React.FC<{}> = () => {
       </div>
         {service.status === 'loaded' &&
             <div className='legend-list'>
-              {service.payload.map((legends: LegendListProps, key:any) => (
-                  <Link to={`/legends/${legends.name}`}>
-                    {legends.name}     
-                  </Link>                     
-              ))}
+              <h1>Legends</h1>
+              <div className='legend-list__list-of-legends'>
+                {service.payload.map((legends: LegendListProps, key:any) => (
+                    <Link to={`/legends/${legends.name}`}>
+                      {legends.name}     
+                    </Link>                     
+                ))}
+              </div>
             </div>
         }
       {service.status === 'error' && (

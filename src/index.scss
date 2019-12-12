@@ -6,11 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #FFF;
-  background: linear-gradient(to right, rgb(16, 29, 43), rgb(11, 17, 29));
-
-  @media only screen and (max-width: 1100px) { 
-    padding-top: 50px;
-  }
+  background: #151419;
 }
 
 code {
@@ -30,4 +26,9 @@ textarea:focus, input:focus{
 
 *:focus {
   outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
 }
