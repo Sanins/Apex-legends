@@ -8,7 +8,7 @@ const WeaponList: React.FC<{}> = () => {
   const service = ApexLegendsService('weapons');
   
   return (
-    <>
+    <div className='general-page-wrapper'>
       {service.status === 'loading' && (
         <p>Loading</p>
       )}
@@ -29,7 +29,7 @@ const WeaponList: React.FC<{}> = () => {
       {service.status === 'error' && (
         <div>Error, the backend moved to the dark side.</div>
       )}
-    </>
+    </div>
   );
 };
 

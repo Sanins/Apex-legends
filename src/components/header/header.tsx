@@ -33,7 +33,7 @@ export default function Header() {
 
 	return (
     <div className='header'>
-      <div className='header__logo-wrapper'>
+      <div className='navigation-page-wrapper header__logo-wrapper'>
         <NavLink 
           onClick={btnClick.close()} 
           activeClassName=''
@@ -49,7 +49,7 @@ export default function Header() {
       >
         Show/hide
       </button>
-      <div className='header__navigation-wrapper'>
+      <div className='navigation-page-wrapper header__navigation-wrapper'>
         <ul className={clsx(!btnClick.currentValue && 'header__close', btnClick.currentValue && 'header__open')}>
           <NavLink 
             onClick={btnClick.close()}
