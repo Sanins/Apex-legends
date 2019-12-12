@@ -1,0 +1,34 @@
+import React from "react";
+import ApexLegendsService from "../../Services/ApexLegendsService";
+import { LegendListProps } from '../../Types/Types';
+import './LegendList.scss';
+import { Link } from "react-router-dom";
+
+const LegendList: React.FC<{}> = () => {
+
+  const service = ApexLegendsService('legends');
+  
+  return (
+    <>
+      <div>   
+        {service.status === 'loading' && (
+          <p>Loading</p>
+        )}
+      </div>
+        {service.status === 'loaded' &&
+            <div className='legend-list'>
+              {service.payload.map((legends: LegendListProps, key:any) => (
+                  <Link to={`/legends/${legends.name}`}>
+                    {legends.name}     
+                  </Link>                     
+              ))}
+            </div>
+        }
+      {service.status === 'error' && (
+        <div>Error, the backend moved to the dark side.</div>
+      )}
+    </>
+  );
+};
+
+export default LegendList;

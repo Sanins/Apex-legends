@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Service } from '../Types/Service';
-import { LegendListProps } from '../Types/Types';
+import { LegendListProps, ApexData } from '../Types/Types';
 
-const ApexLegendsService = (serviceOption:'legends' | 'weapons') => {
+const ApexLegendsService = (serviceOption: ApexData) => {
   const [result, setResult] = useState<Service<LegendListProps>>({
     status: 'loading'
   });

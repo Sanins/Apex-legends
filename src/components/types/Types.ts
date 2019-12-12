@@ -1,3 +1,5 @@
+export type ApexData = 'legends' | 'weapons' | 'items' |  'equipment' | 'consumables' | 'grenades' | 'attachments';
+
 export interface WeaponListProps {
   name: string;
 }

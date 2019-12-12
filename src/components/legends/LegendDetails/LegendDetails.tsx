@@ -1,21 +1,19 @@
 import React from "react";
-import ApexLegendsService from "../Services/ApexLegendsService";
-import { LegendListProps } from "../Types/Types";
+import ApexLegendsService from "../../Services/ApexLegendsService";
+import { LegendListProps } from "../../Types/Types";
 import './LegendDetails.scss';
 
-interface LegendDetailProps {
-    legendKey: number;
-}
-
-export default function LegendDetail(props: LegendDetailProps) {
+export default function LegendDetails(props: any) {
     const service = ApexLegendsService('legends');
+
+    console.log(props.match.params.legendId, 'props.match.params.id')
 
     if (service.status === 'loaded') {
         return (
             <>
                 {service.payload.map((legends: LegendListProps, key:any) => (
                 <>
-                    {key === props.legendKey &&
+                    {legends.name === props.match.params.legendId &&
                         <div key={key}>
                             <div className='legend-details__headings'>
                                 <div className='legend-details__headings__legend-name'>
@@ -23,7 +21,7 @@ export default function LegendDetail(props: LegendDetailProps) {
                                 </div>
                                 <div className='legend-details__character-image'>
                                     <img 
-                                        src={require(`./Images/${legends.name}.png`)}
+                                        src={require(`./../Images/${legends.name}.png`)}
                                     />
                                 </div>
                                 <div className='legend-details__abilities'>
