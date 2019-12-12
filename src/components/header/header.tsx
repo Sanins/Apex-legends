@@ -57,9 +57,7 @@ export default function Header() {
             exact to={`/weapons`} 
             className='header__list-item'
           >
-            <div className='header__list-item__link'>
-              Weapons & Items
-            </div>
+            Weapons & Items
           </NavLink>
           <NavLink 
             onClick={btnClick.close()}
@@ -67,9 +65,7 @@ export default function Header() {
             exact to={`/legends`}
             className='header__list-item'
           >
-            <div className='header__list-item__link'>
-              Legends
-            </div>
+            Legend
           </NavLink>   
         </ul>
       </div>
