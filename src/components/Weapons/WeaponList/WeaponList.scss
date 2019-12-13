@@ -1,5 +1,34 @@
 .weapon-list {
-    &__list-of-weapons  {
+    &__title {
+        margin: 20px;
+
+        &--h1 {
+            text-align: center;
+            font-size: 48px;
+        }
+    }
+    &__information {
         display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+}
+
+.weapon-list-filters {
+
+    &__list {
+        margin-bottom: 20px;
+    }
+
+    &__list-item {
+        list-style-type: none;
+        color: #8f94a5;
+        font-size: 21px;
+
+        &--active {
+            color: #b33834;
+            font-size: 28px;
+            padding: 10px 0;
+        }
     }
 }

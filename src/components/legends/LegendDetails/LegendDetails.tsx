@@ -6,8 +6,6 @@ import './LegendDetails.scss';
 export default function LegendDetails(props: any) {
     const service = ApexLegendsService('legends');
 
-    console.log(props.match.params.legendId, 'props.match.params.id')
-
     if (service.status === 'loaded') {
         return (
             <>

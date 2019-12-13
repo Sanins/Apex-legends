@@ -1,7 +1,8 @@
-export type ApexData = 'legends' | 'weapons' | 'items' |  'equipment' | 'consumables' | 'grenades' | 'attachments';
+export type ApexData = 'legends' | 'weapons' |  'items' |  'equipment' | 'consumables' | 'grenades' | 'attachments';
 
 export interface WeaponListProps {
   name: string;
+  damage: number;
 }
 
 export interface LegendListProps {

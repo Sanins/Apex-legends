@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LegendList from './components/Legends/LegendList/LegendList';
 import LegendDetails from './components/Legends/LegendDetails/LegendDetails';
 import WeaponList from './components/Weapons/WeaponList/WeaponList';
-import WeaponDetails from './components/Weapons/WeaponDetails/WeaponDetails';
 import Home from './components/Home/Home';
 import ItemList from './components/Items/ItemsList/ItemList';
 import Grenades from './components/Items/Grenades/Grenades';
@@ -25,7 +24,6 @@ export default function App() {
                             <Route exact={true} path='/legends' component={LegendList} />
                             <Route path='/legends/:legendId' component={LegendDetails} />
                             <Route exact={true} path='/weapons' component={WeaponList} />
-                            <Route path={'/weapons/:weaponId'} component={WeaponDetails} />
                             <Route exact={true} path='/items' component={ItemList} />
                             <Route exact={true} path='/items/grenades' component={Grenades} />
                             <Route exact={true} path='/items/equipment' component={Equipment} />
