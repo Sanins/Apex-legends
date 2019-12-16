@@ -1,5 +1,6 @@
 import React from "react";
 import ApexLegendsByUrlService from './../../Services/ApexLegendsByUrlService';
+import WeaponFilter from './../WeaponFilter/WeaponFilter';
 import { WeaponListProps } from "../../Types/Types";
 import './WeaponList.scss';
 import clsx from "clsx";
@@ -28,7 +29,7 @@ const WeaponList: React.FC<{}> = () => {
     };
   };
 
-  const handleChange = (param: number) => (e: any) => {
+  const handleWeaponTypeChange = (param: number) => (e: any) => {
     switch (param) {
       case 0:
         setActiveWeaponTypeValue(0);
@@ -67,44 +68,15 @@ const WeaponList: React.FC<{}> = () => {
           <div className='weapon-list__information'>
             <div className='weapon-list-filters'>
               <div className='weapon-list-filters__list'>
-                <a onClick={handleChange(0)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 0 && 'weapon-list-filters__list-item__active')}>Assault Rifles</a>
-                <a onClick={handleChange(1)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 1 && 'weapon-list-filters__list-item__active')}>Sub Machine Guns</a>
-                <a onClick={handleChange(2)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 2 && 'weapon-list-filters__list-item__active')}>Light Machine Guns</a>
-                <a onClick={handleChange(3)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 3 && 'weapon-list-filters__list-item__active')}>Shotguns</a>
-                <a onClick={handleChange(4)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 4 && 'weapon-list-filters__list-item__active')}>Sniper Rifles</a>
-                <a onClick={handleChange(5)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 5 && 'weapon-list-filters__list-item__active')}>Pistols</a>
+                <a onClick={handleWeaponTypeChange(0)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 0 && 'weapon-list-filters__list-item__active')}>Assault Rifles</a>
+                <a onClick={handleWeaponTypeChange(1)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 1 && 'weapon-list-filters__list-item__active')}>Sub Machine Guns</a>
+                <a onClick={handleWeaponTypeChange(2)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 2 && 'weapon-list-filters__list-item__active')}>Light Machine Guns</a>
+                <a onClick={handleWeaponTypeChange(3)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 3 && 'weapon-list-filters__list-item__active')}>Shotguns</a>
+                <a onClick={handleWeaponTypeChange(4)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 4 && 'weapon-list-filters__list-item__active')}>Sniper Rifles</a>
+                <a onClick={handleWeaponTypeChange(5)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 5 && 'weapon-list-filters__list-item__active')}>Pistols</a>
               </div>
               <div className='weapon-list-filters__dropdown'>
-                <div className='weapon-list-filters__dropdown__title'>
-                  <h3>Filter</h3>
-                </div>
-                <div className='weapon-list-filters__dropdown__item'>
-                  <label>Weapon Type</label>
-                  <select>
-                    <option>All</option>
-                    <option>Assault Rifles</option>
-                    <option>Sub Machine Guns</option>
-                    <option>Light Machine Guns</option>
-                    <option>Shotguns</option>
-                    <option>Sniper Rifles</option>
-                    <option>Pistols</option>
-                  </select>
-                </div>
-                <div className='weapon-list-filters__dropdown__item'>
-                  <label>Sort by</label>
-                  <select>
-                    <option>Select...</option>
-                    <option>Damage</option>
-                    <option>Rate of fire</option>
-                    <option>Damage per second</option>
-                    <option>Damage per magazine</option>
-                    <option>Headshot damage</option>
-                    <option>Legshot damage</option>
-                    <option>Ammo capacity</option>
-                    <option>Projectile speed</option>
-                  </select>
-                </div>
-                <button>Filter</button>
+                <WeaponFilter />
               </div>
             </div>
             <div className='weapon-list-filters__list'>
