@@ -31,3 +31,22 @@ a {
 .navigation-page-wrapper {
   padding: 20px 10%;
 }
+
+.button {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  padding: 0 20px 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 40px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #b33834 50%, #cc524e 100%);
+  border: 0;
+  border-bottom: 1px solid #cc524e;
+  color: #FFF;
+  -webkit-transition: padding 100ms;
+  transition: padding 100ms;
+  cursor: pointer;
+  will-change: padding;
+}

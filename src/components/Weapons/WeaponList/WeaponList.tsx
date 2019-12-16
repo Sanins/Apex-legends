@@ -5,7 +5,6 @@ import { WeaponListProps } from "../../Types/Types";
 import './WeaponList.scss';
 import clsx from "clsx";
 
-
 const WeaponList: React.FC<{}> = () => {
 
   const [serviceValue, setServiceValue] = React.useState('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/assault-rifles.json');

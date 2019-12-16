@@ -1,3 +1,6 @@
+
+@import './../../Common/colours.scss';
+
 .weapon-list {
     &__title {
         margin: 20px;
@@ -17,12 +20,13 @@
 .weapon-list-filters {
     &__list {
         display: grid;
+        grid-auto-rows: min-content;
         margin-bottom: 20px;
     }
 
     &__list-item {
         list-style-type: none;
-        color: #8f94a5;
+        color: $text-color;
         font-size: 21px;
         line-height: 30px;
         cursor: pointer;

@@ -3,12 +3,12 @@ import './WeaponFilter.scss';
 
 const WeaponFilter: React.FC<{}> = () => {
     return (
-        <>
+        <div className='weapon-filter'>
             <div className='weapon-filter__title'>
                 <h3 className='weapon-filter__title__text'>Filter</h3>
             </div>
             <div className='weapon-filter__item'>
-                <label>Weapon Type</label>
+                <label className='weapon-filter__item__label'>Weapon Type</label>
                 <select className='weapon-filter__item__select'>
                     <option>All</option>
                     <option>Assault Rifles</option>
@@ -20,7 +20,7 @@ const WeaponFilter: React.FC<{}> = () => {
                 </select>
             </div>
             <div className='weapon-filter__item'>
-                <label>Sort by</label>
+                <label className='weapon-filter__item__label'>Sort by</label>
                 <select className='weapon-filter__item__select'>
                     <option>Select...</option>
                     <option>Damage</option>
@@ -33,8 +33,8 @@ const WeaponFilter: React.FC<{}> = () => {
                     <option>Projectile speed</option>
                 </select>
             </div>
-            <button>Filter</button>
-        </>
+            <button className='button weapon-filter__item__btn'>Filter</button>
+        </div>
     )
 }
 

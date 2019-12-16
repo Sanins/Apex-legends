@@ -1,6 +1,8 @@
+@import './../Common/colours.scss';
+
 .footer {
     background: #151419;
-    color: #8f94a5;
+    color: $text-color;
     width: 80%;
     margin-left: 10%; 
     padding-bottom: 20px;
