@@ -15,8 +15,8 @@
 }
 
 .weapon-list-filters {
-
     &__list {
+        display: grid;
         margin-bottom: 20px;
     }
 
@@ -24,8 +24,14 @@
         list-style-type: none;
         color: #8f94a5;
         font-size: 21px;
+        line-height: 30px;
+        cursor: pointer;
 
-        &--active {
+        &:hover {
+            color: #fff;
+        }
+
+        &__active {
             color: #b33834;
             font-size: 28px;
             padding: 10px 0;
