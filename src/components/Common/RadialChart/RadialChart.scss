@@ -1,7 +1,21 @@
+
+@import './../../Common/colours.scss';
+
 .radial-chart {
     position: relative;
     display: inline-block;
     transition: all 0.3s ease-in;
+
+    &__title {
+        fill: $text-color;
+        font-size: 20px;
+    }
+
+    &__value {
+        fill: #fff;
+        font-size: 40px;
+        font-family: "Teko", sans-serif;
+    }
 }
 .radial-chart.no-progress .radial-chart-progress {
     opacity: 0;

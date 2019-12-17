@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
+import './RadialChart.scss';
 
-interface lolprops {
+interface RadialChartProps {
     className?: any;
     radius?: any;
     progress?: any;
@@ -9,14 +10,16 @@ interface lolprops {
     dimension?: any;
     colorTotal?: any;
     colorProgress?: any;
+    titleText: any;
+    valueText: any;
 }
 
-export default function RadialChart(props: lolprops) {
-    const [poopLength, setStrokeLength] = React.useState(false);
+export default function RadialChart(props: RadialChartProps) {
+    const [strokeValue, setStrokeLength] = React.useState(false);
 
     useEffect(() => {
         setTimeout(() => {
-            setStrokeLength(true);
+            setStrokeLength(true)
         });
     });
 
@@ -28,11 +31,13 @@ export default function RadialChart(props: lolprops) {
         dimension,
         colorTotal,
         colorProgress,
+        titleText,
+        valueText
     } = props;
 
     const circleRadius = Math.min(radius, 85);
     const circumference = 2 * 3.14 * circleRadius;
-    const strokeLength = setStrokeLength ? circumference / 100 * progress : 0;
+    const strokeLength = strokeValue ? circumference / 100 * progress : 0;
     return (
         <div
             className={classNames('radial-chart', className, {
@@ -49,6 +54,8 @@ export default function RadialChart(props: lolprops) {
                     cy="90"
                     r={circleRadius}
                 />
+                <text x="50%" y="40%" className="radial-chart__title" text-anchor="middle" dy=".3em">{titleText}</text>
+                <text x="50%" y="60%" className="radial-chart__value"  text-anchor="middle" dy=".3em">{valueText}</text>
                 <circle
                     className="radial-chart-progress"
                     stroke={colorProgress}

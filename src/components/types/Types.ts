@@ -4,6 +4,19 @@ export interface WeaponListProps {
   name: string;
   damage: number;
   rate_of_fire: number;
+  damage_per_second: number;
+  headshot_damage: number;
+  legshot_damage: number;
+  damage_per_magazine: number;
+  ammo_capacity: number;
+  projectile_speed: number;
+  tactical_reload: number;
+  empty_reload: number;
+  draw_time: number;
+  holster_time: number;
+  average_dps: number;
+  headshot_dps: number;
+  legshot_dps: number;
 }
 
 export interface LegendListProps {
