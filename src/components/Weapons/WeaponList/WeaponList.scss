@@ -13,20 +13,11 @@
     }
 }
 
-.weapon-list-filters {
+.weapon-type-filters {
     &__list {
         display: grid;
         grid-auto-rows: min-content;
         margin-bottom: 70px;
-
-        &--2 {
-            display: inline-grid;
-            justify-content: center;
-        }
-    }
-
-    &__list-image {
-        width: 400px;
     }
 
     &__list-item {
@@ -58,7 +49,7 @@
     }
 }
 
-.weapon-list-filters-dropdown {
+.weapon-type-filters-dropdown {
     &__title {
         margin-bottom: 20px;
         color: #fff;
@@ -103,5 +94,14 @@
             font-size: 16px;
             font-family: "Teko", sans-serif;
         }
+    }
+}
+
+.weapon-list-filters {
+    &__list-image {
+        width: 300px;
+    }
+    &__list-item-container {
+        cursor: pointer;
     }
 }

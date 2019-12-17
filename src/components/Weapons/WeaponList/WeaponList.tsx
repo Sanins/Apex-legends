@@ -71,24 +71,28 @@ const WeaponList: React.FC<{}> = () => {
             </Heading>
           </div>
           <div className='weapon-list__information'>
-            <div className='weapon-list-filters'>
-              <div className='weapon-list-filters__list'>
-                <a onClick={handleWeaponTypeChange(0)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 0 && 'weapon-list-filters__list-item__active')}>Assault Rifles</a>
-                <a onClick={handleWeaponTypeChange(1)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 1 && 'weapon-list-filters__list-item__active')}>Sub Machine Guns</a>
-                <a onClick={handleWeaponTypeChange(2)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 2 && 'weapon-list-filters__list-item__active')}>Light Machine Guns</a>
-                <a onClick={handleWeaponTypeChange(3)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 3 && 'weapon-list-filters__list-item__active')}>Shotguns</a>
-                <a onClick={handleWeaponTypeChange(4)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 4 && 'weapon-list-filters__list-item__active')}>Sniper Rifles</a>
-                <a onClick={handleWeaponTypeChange(5)} className={clsx('weapon-list-filters__list-item', activeWeaponTypeValue === 5 && 'weapon-list-filters__list-item__active')}>Pistols</a>
+            <div className='weapon-type-filters'>
+              <div className='weapon-type-filters__list'>
+                <a onClick={handleWeaponTypeChange(0)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 0 && 'weapon-type-filters__list-item__active')}>Assault Rifles</a>
+                <a onClick={handleWeaponTypeChange(1)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 1 && 'weapon-type-filters__list-item__active')}>Sub Machine Guns</a>
+                <a onClick={handleWeaponTypeChange(2)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 2 && 'weapon-type-filters__list-item__active')}>Light Machine Guns</a>
+                <a onClick={handleWeaponTypeChange(3)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 3 && 'weapon-type-filters__list-item__active')}>Shotguns</a>
+                <a onClick={handleWeaponTypeChange(4)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 4 && 'weapon-type-filters__list-item__active')}>Sniper Rifles</a>
+                <a onClick={handleWeaponTypeChange(5)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 5 && 'weapon-type-filters__list-item__active')}>Pistols</a>
               </div>
-              <div className='weapon-list-filters__dropdown'>
+              <div className='weapon-type-filters__dropdown'>
                 <WeaponFilter />
               </div>
             </div>
-            <div className='weapon-list-filters__list--2'>
+            <div className='weapon-list-filters'>
               {service.payload.map((weaponCategories: WeaponListProps, key: number) => (
-                <div className='weapon-list-filters__weapons'>
-                  <a key={key} onClick={handleWeaponChange(key)} className={clsx('weapon-list-filters__list-item', activeWeaponValue === key && 'weapon-list-filters__list-item__active')}>{weaponCategories.name}</a>
-                  <img className='weapon-list-data__weapon-image' src={require(`./Icons/${weaponCategories.name}.png`)} />
+                <div className='weapon-list-filters__list-item-container' onClick={handleWeaponChange(key)} >
+                  <a 
+                    key={key} 
+                    onClick={handleWeaponChange(key)} 
+                    className={clsx('weapon-list-filters__list-item', activeWeaponValue === key && 'weapon-list-filters__list-item__active')}>{weaponCategories.name}
+                  </a>
+                  <img className='weapon-list-filters__list-image' src={require(`./Large-icons/${weaponCategories.name}.png`)} />
                 </div>
               ))}
             </div>
