@@ -4,12 +4,9 @@
 .weapon-list {
     &__title {
         margin: 20px;
-
-        &--h1 {
-            text-align: center;
-            font-size: 48px;
-        }
+        text-align: center;
     }
+
     &__information {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -39,6 +36,11 @@
             color: #b33834;
             font-size: 28px;
             padding: 10px 0;
+            cursor: default;
+
+            &:hover {
+                color: #b33834;
+            }
         }
     }
 }
@@ -49,5 +51,12 @@
         color: #fff;
         font-weight: 300;
         font-size: 18px;
+    }
+}
+
+.weapon-list-data {
+    &__radial-graphs {
+        display: grid;
+        grid-auto-flow: column;
     }
 }

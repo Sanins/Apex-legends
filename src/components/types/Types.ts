@@ -3,6 +3,7 @@ export type ApexData = 'legends' | 'weapons' |  'items' |  'equipment' | 'consum
 export interface WeaponListProps {
   name: string;
   damage: number;
+  rate_of_fire: number;
 }
 
 export interface LegendListProps {

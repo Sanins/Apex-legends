@@ -2,6 +2,8 @@ import React from "react";
 import ApexLegendsByUrlService from './../../Services/ApexLegendsByUrlService';
 import WeaponFilter from './../WeaponFilter/WeaponFilter';
 import { WeaponListProps } from "../../Types/Types";
+import Heading from "../../Common/Heading/Heading"
+import RadialChart from '../../Common/RadialChart/RadialChart'
 import './WeaponList.scss';
 import clsx from "clsx";
 
@@ -62,7 +64,11 @@ const WeaponList: React.FC<{}> = () => {
       {service.status === 'loaded' &&
         <div className='weapon-list'>
           <div className='weapon-list__title'>
-            <h1 className='weapon-list__title--h1'>Weapons</h1>
+            <Heading 
+              headingType={1}
+            >
+              Weapons
+            </Heading>
           </div>
           <div className='weapon-list__information'>
             <div className='weapon-list-filters'>
@@ -89,9 +95,26 @@ const WeaponList: React.FC<{}> = () => {
               {service.payload.map((weaponCategories: WeaponListProps, key: number) => (
                 <div className='weapon-list-data'>
                   {key === activeWeaponValue &&
-                    <div>
-                      {weaponCategories.damage}
+                  <>
+                    <Heading headingType={3}>{weaponCategories.name}</Heading>
+                    <div className='weapon-list-data__radial-graphs'>
+                      <div>
+                        <p>DMG</p>
+                        <RadialChart
+                          progress={weaponCategories.damage}
+                          colorTotal="#000"
+                          colorProgress="#bdc0cf"
+                          radius={80}
+                          strokeWidth={18}
+                          dimension={110}
+                        />
+                      </div>
+                      <div>
+                        <p>RPM</p>
+                        {weaponCategories.rate_of_fire}
+                      </div>
                     </div>
+                  </>
                   }
                 </div>
               ))}
