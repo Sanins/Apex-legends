@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import ApexLegendsByUrlService from './../../Services/ApexLegendsByUrlService';
-import WeaponFilter from './../WeaponFilter/WeaponFilter';
-import WeaponListExtraInfo from './WeaponListExtraInfo/WeaponListExtraInfo'
+import WeaponListData from './WeaponListData/WeaponListData'
+import WeaponTypeFilters from './WeaponTypeFilters/WeaponTypeFilters'
+import WeaponListFilters from './WeaponListFilters/WeaponListFilters'
 import { WeaponListProps } from "../../Types/Types";
 import Heading from "../../Common/Heading/Heading"
-import RadialChart from '../../Common/RadialChart/RadialChart'
 import './WeaponList.scss';
-import clsx from "clsx";
 
 const WeaponList: React.FC<{}> = () => {
 
@@ -79,28 +78,24 @@ const WeaponList: React.FC<{}> = () => {
           </div>
           <div className='weapon-list__information'>
             <div className='weapon-type-filters'>
-              <div className='weapon-type-filters__list'>
-                <a onClick={handleWeaponTypeChange(0)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 0 && 'weapon-type-filters__list-item__active')}>Assault Rifles</a>
-                <a onClick={handleWeaponTypeChange(1)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 1 && 'weapon-type-filters__list-item__active')}>Sub Machine Guns</a>
-                <a onClick={handleWeaponTypeChange(2)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 2 && 'weapon-type-filters__list-item__active')}>Light Machine Guns</a>
-                <a onClick={handleWeaponTypeChange(3)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 3 && 'weapon-type-filters__list-item__active')}>Shotguns</a>
-                <a onClick={handleWeaponTypeChange(4)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 4 && 'weapon-type-filters__list-item__active')}>Sniper Rifles</a>
-                <a onClick={handleWeaponTypeChange(5)} className={clsx('weapon-type-filters__list-item', activeWeaponTypeValue === 5 && 'weapon-type-filters__list-item__active')}>Pistols</a>
-              </div>
-              <div className='weapon-type-filters__dropdown'>
-                <WeaponFilter />
-              </div>
+              <WeaponTypeFilters
+                assaultRifles={handleWeaponTypeChange(0)}
+                subMachineGuns={handleWeaponTypeChange(1)}
+                lightMachineGuns={handleWeaponTypeChange(2)}
+                shotguns={handleWeaponTypeChange(3)}
+                sniperRifles={handleWeaponTypeChange(4)}
+                pistols={handleWeaponTypeChange(5)}
+                activeWeapon={activeWeaponTypeValue}
+              />
             </div>
             <div className='weapon-list-filters'>
               {service.payload.map((weaponCategories: WeaponListProps, key: number) => (
-                <div className='weapon-list-filters__list-item-container' onClick={handleWeaponChange(key)} >
-                  <a
-                    key={key}
-                    onClick={handleWeaponChange(key)}
-                    className={clsx('weapon-list-filters__list-item', activeWeaponValue === key && 'weapon-list-filters__list-item__active')}>{weaponCategories.name}
-                  </a>
-                  <img className='weapon-list-filters__list-image' src={require(`./Large-icons/${weaponCategories.name}.png`)} />
-                </div>
+                <WeaponListFilters
+                  key={key}
+                  name={weaponCategories.name}
+                  activeWeaponValue={activeWeaponValue}
+                  handleWeaponChange={handleWeaponChange(key)}
+                />
               ))}
             </div>
             <div className='weapon-list-data'>
@@ -108,86 +103,24 @@ const WeaponList: React.FC<{}> = () => {
                 <>
                   {key === activeWeaponValue &&
                     <>
-                      <div className='weapon-list-data__title-container'>
-                        <Heading headingType={3}>{weaponCategories.name}</Heading>
-                        <img className='weapon-list-data__weapon-image' src={require(`./Icons/${weaponCategories.name}.png`)} />
-                      </div>
-                      <div className='weapon-list-data__radial-graphs'>
-                        <div>
-                          <RadialChart
-                            progress={weaponCategories.damage}
-                            colorTotal="#000"
-                            colorProgress="#bdc0cf"
-                            radius={80}
-                            strokeWidth={14}
-                            dimension={140}
-                            titleText={'DMG'}
-                            valueText={weaponCategories.damage}
-                          />
-                        </div>
-                        <div>
-                          <RadialChart
-                            progress={weaponCategories.rate_of_fire / 12}
-                            colorTotal="#000"
-                            colorProgress="#bdc0cf"
-                            radius={80}
-                            strokeWidth={14}
-                            dimension={140}
-                            titleText={'RPM'}
-                            valueText={weaponCategories.rate_of_fire}
-                          />
-                        </div>
-                      </div>
-                      <div className='weapon-list-data__bar-charts-container'>
-                        <div className='weapon-list-data__bar-charts'>
-                          <div>Damage per second</div>
-                          <div><span className='weapon-list-data__bar-charts__value'>{weaponCategories.damage_per_second}</span></div>
-                        </div>
-                        <div className='weapon-list-data__bar-charts'>
-                          <div>Headshot damage</div>
-                          <div><span className='weapon-list-data__bar-charts__value'>{weaponCategories.headshot_damage}</span></div>
-                        </div>
-                        <div className='weapon-list-data__bar-charts'>
-                          <div>Legshot damage</div>
-                          <div><span className='weapon-list-data__bar-charts__value'>{weaponCategories.legshot_damage}</span></div>
-                        </div>
-                        <div className='weapon-list-data__bar-charts'>
-                          <div>Damage per mag</div>
-                          <div><span className='weapon-list-data__bar-charts__value'>{weaponCategories.damage_per_magazine}</span></div>
-                        </div>
-                        <WeaponListExtraInfo
-                          averageDps={weaponCategories.average_dps}
-                          headshotDps={weaponCategories.headshot_dps}
-                          legshotDps={weaponCategories.legshot_dps}
-                        />
-                        <hr></hr>
-                      </div>
-                      <div className='weapon-list-data__bar-charts-container'>
-                        <div className='weapon-list-data__bar-charts'>
-                          <div>Ammo capacity</div>
-                          <div><span className='weapon-list-data__bar-charts__value'>{weaponCategories.ammo_capacity}</span></div>
-                        </div>
-                        <div className='weapon-list-data__bar-charts'>
-                          <div>Projectile speed</div>
-                          <div><span className='weapon-list-data__bar-charts__value'>{weaponCategories.projectile_speed}</span> m/s</div>
-                        </div>
-                        <div className='weapon-list-data__bar-charts'>
-                          <div>Tactical reload</div>
-                          <div><span className='weapon-list-data__bar-charts__value'>{weaponCategories.tactical_reload}</span> s</div>
-                        </div>
-                        <div className='weapon-list-data__bar-charts'>
-                          <div>Empty reload</div>
-                          <div><span className='weapon-list-data__bar-charts__value'>{weaponCategories.empty_reload}</span> s</div>
-                        </div>
-                        <div className='weapon-list-data__bar-charts'>
-                          <div>Draw time</div>
-                          <div><span className='weapon-list-data__bar-charts__value'>{weaponCategories.draw_time}</span> s</div>
-                        </div>
-                        <div className='weapon-list-data__bar-charts'>
-                          <div>Holster time</div>
-                          <div><span className='weapon-list-data__bar-charts__value'>{weaponCategories.holster_time}</span> s</div>
-                        </div>
-                      </div>
+                      <WeaponListData
+                        ammoCapacity={weaponCategories.ammo_capacity}
+                        averageDps={weaponCategories.average_dps}
+                        name={weaponCategories.name}
+                        projectileSpeed={weaponCategories.projectile_speed}
+                        damage={weaponCategories.damage}
+                        damagePerSecond={weaponCategories.damage_per_second}
+                        damagePerMagazine={weaponCategories.damage_per_magazine}
+                        headshotDamage={weaponCategories.headshot_dps}
+                        headshotDps={weaponCategories.headshot_dps}
+                        legshotDamage={weaponCategories.legshot_damage}
+                        rateOfFire={weaponCategories.rate_of_fire}
+                        legshotDps={weaponCategories.legshot_dps}
+                        tacticalReload={weaponCategories.tactical_reload}
+                        emptyReload={weaponCategories.empty_reload}
+                        drawTime={weaponCategories.draw_time}
+                        holsterTime={weaponCategories.holster_time}
+                      />
                     </>
                   }
                 </>

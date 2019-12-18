@@ -1,0 +1,38 @@
+@import './../../../Common/colours.scss';
+
+.weapon-list-data {    
+    &__title-container {
+        display: flex;
+        margin-bottom: 40px;
+        justify-content: space-between;
+    }
+    &__weapon-image {
+        margin-right: 10px;
+        max-width: 300px;
+    }
+    &__radial-graphs {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    &__extra-info {
+        margin-top: 10px;
+    }
+
+    &__bar-charts-container {
+        color: $text-color;
+        font-size: 14px;
+    }
+    &__bar-charts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__value {
+            color: #fff;
+            font-size: 16px;
+            font-family: "Teko", sans-serif;
+        }
+    }
+}

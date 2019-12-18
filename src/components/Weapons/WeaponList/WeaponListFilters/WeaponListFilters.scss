@@ -1,0 +1,13 @@
+
+@import '../../../Common/colours.scss';
+
+
+.weapon-list-filters {
+    &__list-image {
+        width: 300px;
+    }
+    &__list-item-container {
+        text-align: center;
+        cursor: pointer;
+    }
+}
