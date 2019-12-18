@@ -3,8 +3,20 @@
 
 
 .weapon-list-filters {
+    @media only screen and (max-width: 1100px) { 
+        grid-row: 2;
+    }
+
+    @media only screen and (max-width: 700px) { 
+        grid-row: 1;
+    }
+    
     &__list-image {
         width: 300px;
+
+        @media only screen and (max-width: 700px) { 
+            display: none;
+        }
     }
     &__list-item-container {
         text-align: center;

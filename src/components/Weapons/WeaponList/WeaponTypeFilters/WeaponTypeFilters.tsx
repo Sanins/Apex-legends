@@ -14,18 +14,26 @@ interface WeaponTypeFiltersProps {
 }
 
 export default function WeaponTypeFilters(props: WeaponTypeFiltersProps) {
+    // const [result, setResult] = useState();
+
+    const handleSelectChange = (event: any) => (e: any) => {
+        console.log(event, 'event')
+        console.log(e, 'e')
+    }
 
     return (
         <>
-            <div className='weapon-type-filters__list'>
-            <a onClick={props.assaultRifles} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 0 && 'weapon-type-filters__list-item__active')}>Assault Rifles</a>
-            <a onClick={props.subMachineGuns} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 1 && 'weapon-type-filters__list-item__active')}>Sub Machine Guns</a>
-            <a onClick={props.lightMachineGuns} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 2 && 'weapon-type-filters__list-item__active')}>Light Machine Guns</a>
-            <a onClick={props.shotguns} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 3 && 'weapon-type-filters__list-item__active')}>Shotguns</a>
-            <a onClick={props.sniperRifles} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 4 && 'weapon-type-filters__list-item__active')}>Sniper Rifles</a>
-            <a onClick={props.pistols} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 5 && 'weapon-type-filters__list-item__active')}>Pistols</a>
+            <div className='weapon-type-filters__list-wrapper'>
+                <div className='weapon-type-filters__list'>
+                    <a onClick={props.assaultRifles} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 0 && 'weapon-type-filters__list-item__active')}>Assault Rifles</a>
+                    <a onClick={props.subMachineGuns} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 1 && 'weapon-type-filters__list-item__active')}>Sub Machine Guns</a>
+                    <a onClick={props.lightMachineGuns} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 2 && 'weapon-type-filters__list-item__active')}>Light Machine Guns</a>
+                    <a onClick={props.shotguns} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 3 && 'weapon-type-filters__list-item__active')}>Shotguns</a>
+                    <a onClick={props.sniperRifles} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 4 && 'weapon-type-filters__list-item__active')}>Sniper Rifles</a>
+                    <a onClick={props.pistols} className={clsx('weapon-type-filters__list-item', props.activeWeapon === 5 && 'weapon-type-filters__list-item__active')}>Pistols</a>
+                </div>
+                <WeaponFilter />
             </div>
-            <WeaponFilter />
         </>
     )
  };

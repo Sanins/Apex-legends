@@ -76,6 +76,36 @@ const WeaponList: React.FC<{}> = () => {
               Weapons
             </Heading>
           </div>
+          {/* <div className='weapon-list-mobile'>
+              <div className='weapon-list-mobile__weapon-type'>
+                  <div className='weapon-filter__item'>
+                      <label className='weapon-filter__item__label'>Weapon Type</label>
+                      <select className='weapon-filter__item__select'>
+                          <option>Select...</option>
+                          <option value="0">Assault Rifles</option>
+                          <option value="1">Sub Machine Guns</option>
+                          <option value="2">Light Machine Guns</option>
+                          <option value="3">Shotguns</option>
+                          <option value="4">Sniper Rifles</option>
+                          <option value="5">Pistols</option>
+                      </select>
+                  </div>
+              </div>
+              <div className='weapon-list-mobile__weapon'>
+                  <div className='weapon-filter__item'>
+                      <label className='weapon-filter__item__label'>Which Weapon?</label>
+                      <select className='weapon-filter__item__select'>
+                          <option>Select...</option>
+                          <option value="0">Assault Rifles</option>
+                          <option value="1">Sub Machine Guns</option>
+                          <option value="2">Light Machine Guns</option>
+                          <option value="3">Shotguns</option>
+                          <option value="4">Sniper Rifles</option>
+                          <option value="5">Pistols</option>
+                      </select>
+                  </div>
+              </div>
+          </div> */}
           <div className='weapon-list__information'>
             <div className='weapon-type-filters'>
               <WeaponTypeFilters
