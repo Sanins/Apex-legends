@@ -123,7 +123,7 @@ const WeaponList: React.FC<{}> = () => {
             <div className='weapon-list-filters'>
               <div className='weapon-list-filters__mobile-btn-wrapper'>
                 <label>Weapon Selection</label>
-                  <a onClick={() => setShowText(!showText)} className='mobile-dropdown-btn'>Weapon Selection</a>
+                  <a onClick={() => setShowText(!showText)} className='mobile-dropdown-btn'>Select...</a>
               </div>
               <div className={clsx('weapon-list-filters__list', showText && 'weapon-list-filters__show')}>
                 {service.payload.map((weaponCategories: WeaponListProps, key: number) => (

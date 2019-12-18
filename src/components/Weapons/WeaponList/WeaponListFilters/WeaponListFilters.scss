@@ -28,6 +28,11 @@
     &__list {
         @media only screen and (max-width: 700px) { 
             display: none;
+            position: absolute;
+            width: 200px;
+            background: black;
+            padding: 10px;
+            z-index: 1;
         }
     }
     
@@ -41,5 +46,18 @@
     &__list-item-container {
         text-align: center;
         cursor: pointer;
+
+        @media only screen and (max-width: 700px) { 
+            text-align: left;
+        }
+    }
+
+    &__list-item {
+        @media only screen and (max-width: 700px) { 
+            color: #8f94a5;
+            font-size: 16px;
+            line-height: 30px;
+            cursor: pointer;
+        }
     }
 }
