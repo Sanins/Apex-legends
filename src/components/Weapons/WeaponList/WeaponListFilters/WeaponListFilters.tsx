@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './WeaponListFilters.scss';
 import clsx from "clsx";
 
@@ -10,7 +10,6 @@ interface WeaponListFiltersProps {
 }
 
 export default function WeaponListFilters(props: WeaponListFiltersProps) {
-
     return (
         <div className='weapon-list-filters__list-item-container' onClick={props.handleWeaponChange} >
             <a

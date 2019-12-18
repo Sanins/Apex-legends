@@ -10,6 +10,26 @@
     @media only screen and (max-width: 700px) { 
         grid-row: 1;
     }
+
+    &__mobile-btn-wrapper {
+        display: none;
+
+        @media only screen and (max-width: 700px) { 
+            display: grid;
+            text-align: center;
+            grid-gap: 10px;
+        }
+    }
+
+    &__show {
+        display: grid!important;
+    }
+
+    &__list {
+        @media only screen and (max-width: 700px) { 
+            display: none;
+        }
+    }
     
     &__list-image {
         width: 300px;

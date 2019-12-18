@@ -6,12 +6,14 @@ import WeaponListFilters from './WeaponListFilters/WeaponListFilters'
 import { WeaponListProps } from "../../Types/Types";
 import Heading from "../../Common/Heading/Heading"
 import './WeaponList.scss';
+import clsx from "clsx";
 
 const WeaponList: React.FC<{}> = () => {
 
   const [serviceValue, setServiceValue] = useState('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/assault-rifles.json');
   const [activeWeaponTypeValue, setActiveWeaponTypeValue] = useState(0);
   const [activeWeaponValue, setActiveWeaponValue] = useState(0);
+  const [showText, setShowText] = useState(false);
 
   const handleWeaponChange = (param: number) => (e: any) => {
     switch (param) {
@@ -119,14 +121,20 @@ const WeaponList: React.FC<{}> = () => {
               />
             </div>
             <div className='weapon-list-filters'>
-              {service.payload.map((weaponCategories: WeaponListProps, key: number) => (
-                <WeaponListFilters
-                  key={key}
-                  name={weaponCategories.name}
-                  activeWeaponValue={activeWeaponValue}
-                  handleWeaponChange={handleWeaponChange(key)}
-                />
-              ))}
+              <div className='weapon-list-filters__mobile-btn-wrapper'>
+                <label>Weapon Selection</label>
+                  <a onClick={() => setShowText(!showText)} className='mobile-dropdown-btn'>Weapon Selection</a>
+              </div>
+              <div className={clsx('weapon-list-filters__list', showText && 'weapon-list-filters__show')}>
+                {service.payload.map((weaponCategories: WeaponListProps, key: number) => (
+                  <WeaponListFilters
+                    key={key}
+                    name={weaponCategories.name}
+                    activeWeaponValue={activeWeaponValue}
+                    handleWeaponChange={handleWeaponChange(key)}
+                  />
+                ))}
+              </div>
             </div>
             <div className='weapon-list-data'>
               {service.payload.map((weaponCategories: WeaponListProps, key: number) => (
