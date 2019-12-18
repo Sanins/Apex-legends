@@ -4,9 +4,7 @@ import './Home.scss';
 function Home() { 
 
   return (
-    <div className='general-page-wrapper home'>
-      <p>Home</p>
-    </div>
+    <p>Home</p>
   );
 }
 

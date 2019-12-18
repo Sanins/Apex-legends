@@ -1,9 +1,9 @@
-
-.content-wrap {
-    padding-bottom: 96px;
+.wrapper {
+    max-width: calc(1240px + 10vw);
+    padding: 0 5vw;
+    margin: 0 auto;
 }
 
-.page-container {
-    position: relative;
-    min-height: 100vh;
-  }
+.top-offset {
+    padding-top: 80px;
+}

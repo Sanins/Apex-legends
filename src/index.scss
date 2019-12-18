@@ -1,7 +1,10 @@
+@import './components/Common/colours.scss';
+
 body {
   margin: 0;
-  color: #FFF;
-  background: #151419;
+  color: $text-color;
+  font-weight: 300;
+  background: #21212a;
   font-family: "Roboto", sans-serif;
 }
 
@@ -22,14 +25,6 @@ textarea:focus, input:focus{
 a {
   text-decoration: none;
   color: #FFF;
-}
-
-.general-page-wrapper {
-  padding: 20px 10% 50px 10%;
-}
-
-.navigation-page-wrapper {
-  padding: 20px 10%;
 }
 
 .button {

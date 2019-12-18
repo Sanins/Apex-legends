@@ -9,7 +9,7 @@ const LegendList: React.FC<{}> = () => {
   const service = ApexLegendsService('legends');
   
   return (
-    <div className='general-page-wrapper'>
+    <>
       {service.status === 'loading' && (
         <p>Loading</p>
       )}
@@ -29,7 +29,7 @@ const LegendList: React.FC<{}> = () => {
       {service.status === 'error' && (
         <div>Error, the backend moved to the dark side.</div>
       )}
-    </div>
+    </>
   );
 };
 

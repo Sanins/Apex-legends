@@ -34,21 +34,27 @@ const WeaponList: React.FC<{}> = () => {
     switch (param) {
       case 0:
         setActiveWeaponTypeValue(0);
+        setActiveWeaponValue(0);
         return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/assault-rifles.json');
       case 1:
         setActiveWeaponTypeValue(1);
+        setActiveWeaponValue(0);
         return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/sub-machine-guns.json');
       case 2:
         setActiveWeaponTypeValue(2);
+        setActiveWeaponValue(0);
         return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/light-machine-guns');
       case 3:
         setActiveWeaponTypeValue(3);
+        setActiveWeaponValue(0);
         return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/shotguns');
       case 4:
         setActiveWeaponTypeValue(4);
+        setActiveWeaponValue(0);
         return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/sniper-rifles');
       case 5:
         setActiveWeaponTypeValue(5);
+        setActiveWeaponValue(0);
         return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/pistols');
     };
   };
@@ -56,16 +62,16 @@ const WeaponList: React.FC<{}> = () => {
   const service = ApexLegendsByUrlService(serviceValue);
 
   return (
-    <div className='general-page-wrapper'>
+    <>
       {/* {service.status === 'loading' && (
         <p>Loading</p>
       )} */}
 
       {service.status === 'loaded' &&
         <div className='weapon-list'>
-          <div className='weapon-list__title'>
+          <div className='heading'>
             <Heading 
-              headingType={1}
+              headingType={2}
             >
               Weapons
             </Heading>
@@ -205,7 +211,7 @@ const WeaponList: React.FC<{}> = () => {
       {service.status === 'error' && (
         <div>Error, the backend moved to the dark side.</div>
       )}
-    </div>
+    </>
   );
 };
 

@@ -33,15 +33,17 @@ export default function Header() {
 
 	return (
     <div className='header'>
-      <div className='navigation-page-wrapper header__logo-wrapper'>
-        <NavLink 
-          onClick={btnClick.close()} 
-          activeClassName=''
-          exact to={`/`} 
-          className=''
-        >
-        <Logo/>
-        </NavLink>
+      <div className='header__top'>
+        <div className='wrapper'>
+          <NavLink 
+            onClick={btnClick.close()} 
+            activeClassName=''
+            exact to={`/`} 
+            className=''
+          >
+          <Logo/>
+          </NavLink>
+        </div>
       </div>
       <button 
         onClick={btnClick.toggle()}
@@ -49,33 +51,35 @@ export default function Header() {
       >
         Show/hide
       </button>
-      <div className='navigation-page-wrapper header__navigation-wrapper'>
-        <ul className={clsx(!btnClick.currentValue && 'header__close', btnClick.currentValue && 'header__open')}>
-          <NavLink 
-            onClick={btnClick.close()}
-            activeClassName="header__list-item--selected"
-            exact to={`/weapons`} 
-            className='header__list-item'
-          >
-            Weapons
-          </NavLink>
-          <NavLink 
-            onClick={btnClick.close()}
-            activeClassName="header__list-item--selected"
-            exact to={`/legends`}
-            className='header__list-item'
-          >
-            Legends
-          </NavLink>   
-          <NavLink 
-            onClick={btnClick.close()}
-            activeClassName="header__list-item--selected"
-            exact to={`/items`}
-            className='header__list-item'
-          >
-            Items
-          </NavLink> 
-        </ul>
+      <div className='header__bottom'>
+        <div className='wrapper'>
+          <ul className={clsx(!btnClick.currentValue && 'header__close', btnClick.currentValue && 'header__open')}>
+            <NavLink 
+              onClick={btnClick.close()}
+              activeClassName="header__list-item--selected"
+              exact to={`/weapons`} 
+              className='header__list-item'
+            >
+              Weapons
+            </NavLink>
+            <NavLink 
+              onClick={btnClick.close()}
+              activeClassName="header__list-item--selected"
+              exact to={`/legends`}
+              className='header__list-item'
+            >
+              Legends
+            </NavLink>   
+            <NavLink 
+              onClick={btnClick.close()}
+              activeClassName="header__list-item--selected"
+              exact to={`/items`}
+              className='header__list-item'
+            >
+              Items
+            </NavLink> 
+          </ul>
+        </div>
       </div>
     </div>
   );
