@@ -64,21 +64,39 @@ export default function WeaponListData(props: WeaponListDataProps) {
                         dataValue={props.damagePerSecond}
                         dataTitle='Damage per second'
                     />
-                    <div>
+                    <div className='weapon-list-data__bar-charts__value-container'>
                         <span className='weapon-list-data__bar-charts__value'>{props.damagePerSecond}</span>
                     </div>
                 </div>
                 <div className='weapon-list-data__bar-charts'>
                     <div>Headshot damage</div>
-                    <div><span className='weapon-list-data__bar-charts__value'>{props.headshotDamage}</span></div>
+                    <BarChart
+                        dataValue={props.headshotDamage}
+                        dataTitle='Headshot damage'
+                    />
+                    <div className='weapon-list-data__bar-charts__value-container'>
+                        <span className='weapon-list-data__bar-charts__value'>{props.headshotDamage}</span>
+                    </div>
                 </div>
                 <div className='weapon-list-data__bar-charts'>
                     <div>Legshot damage</div>
-                    <div><span className='weapon-list-data__bar-charts__value'>{props.legshotDamage}</span></div>
+                    <BarChart
+                        dataValue={props.legshotDamage}
+                        dataTitle='Legshot damage'
+                    />
+                    <div className='weapon-list-data__bar-charts__value-container'>
+                        <span className='weapon-list-data__bar-charts__value'>{props.legshotDamage}</span>
+                    </div>
                 </div>
                 <div className='weapon-list-data__bar-charts'>
                     <div>Damage per mag</div>
-                    <div><span className='weapon-list-data__bar-charts__value'>{props.damagePerMagazine}</span></div>
+                    <BarChart
+                        dataValue={props.damagePerMagazine}
+                        dataTitle='Damage per mag'
+                    />
+                    <div className='weapon-list-data__bar-charts__value-container'>
+                        <span className='weapon-list-data__bar-charts__value'>{props.damagePerMagazine}</span>
+                    </div>
                 </div>
                 <WeaponListExtraInfo
                     averageDps={props.averageDps}
@@ -88,29 +106,41 @@ export default function WeaponListData(props: WeaponListDataProps) {
                 <hr></hr>
             </div>
             <div className='weapon-list-data__bar-charts-container'>
-                <div className='weapon-list-data__bar-charts'>
+                <div className='weapon-list-data__extra-bar-charts'>
                     <div>Ammo capacity</div>
-                    <div><span className='weapon-list-data__bar-charts__value'>{props.ammoCapacity}</span></div>
+                    <div className='weapon-list-data__bar-charts__value-container'>
+                        <span className='weapon-list-data__bar-charts__value'>{props.ammoCapacity}</span>
+                    </div>
                 </div>
-                <div className='weapon-list-data__bar-charts'>
+                <div className='weapon-list-data__extra-bar-charts'>
                     <div>Projectile speed</div>
-                    <div><span className='weapon-list-data__bar-charts__value'>{props.projectileSpeed}</span> m/s</div>
+                    <div className='weapon-list-data__bar-charts__value-container'>
+                        <span className='weapon-list-data__bar-charts__value'>{props.projectileSpeed}</span> m/s
+                    </div>
                 </div>
-                <div className='weapon-list-data__bar-charts'>
+                <div className='weapon-list-data__extra-bar-charts'>
                     <div>Tactical reload</div>
-                    <div><span className='weapon-list-data__bar-charts__value'>{props.tacticalReload}</span> s</div>
+                    <div className='weapon-list-data__bar-charts__value-container'>
+                        <span className='weapon-list-data__bar-charts__value'>{props.tacticalReload}</span> s
+                    </div>
                 </div>
-                <div className='weapon-list-data__bar-charts'>
+                <div className='weapon-list-data__extra-bar-charts'>
                     <div>Empty reload</div>
-                    <div><span className='weapon-list-data__bar-charts__value'>{props.emptyReload}</span> s</div>
+                    <div className='weapon-list-data__bar-charts__value-container'>
+                        <span className='weapon-list-data__bar-charts__value'>{props.emptyReload}</span> s
+                    </div>
                 </div>
-                <div className='weapon-list-data__bar-charts'>
+                <div className='weapon-list-data__extra-bar-charts'>
                     <div>Draw time</div>
-                    <div><span className='weapon-list-data__bar-charts__value'>{props.drawTime}</span> s</div>
+                    <div className='weapon-list-data__bar-charts__value-container'>
+                        <span className='weapon-list-data__bar-charts__value'>{props.drawTime}</span> s
+                    </div>
                 </div>
-                <div className='weapon-list-data__bar-charts'>
+                <div className='weapon-list-data__extra-bar-charts'>
                     <div>Holster time</div>
-                    <div><span className='weapon-list-data__bar-charts__value'>{props.holsterTime}</span> s</div>
+                    <div className='weapon-list-data__bar-charts__value-container'>
+                        <span className='weapon-list-data__bar-charts__value'>{props.holsterTime}</span> s
+                    </div>
                 </div>
             </div>
         </>

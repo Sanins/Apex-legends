@@ -34,10 +34,20 @@
         color: $text-color;
         font-size: 14px;
     }
-    &__bar-charts {
-        display: flex;
-        justify-content: space-between;
+
+    &__extra-bar-charts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         align-items: center;
+    }
+    &__bar-charts {
+        display: grid;
+        grid-template-columns: 150px 1fr 1fr;
+        align-items: center;
+
+        &__value-container {
+            text-align: right;
+        }
 
         &__value {
             color: #fff;

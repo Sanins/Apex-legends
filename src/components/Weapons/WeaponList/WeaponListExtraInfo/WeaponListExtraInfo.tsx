@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './WeaponListExtraInfo.scss';
+import BarChart from "../../../Common/BarChart/BarChart";
 
 interface WeaponListExtraInfoProps {
     averageDps: number;
@@ -23,15 +24,33 @@ export default function WeaponListExtraInfo(props: WeaponListExtraInfoProps) {
                 </div>
                 <div className='weapon-list-data__bar-charts'>
                 <div>Average dps/sec</div>
-                <div><span className='weapon-list-data__bar-charts__value'>{props.averageDps}</span></div>
+                <BarChart
+                    dataValue={props.averageDps}
+                    dataTitle='Average dps/sec'
+                />
+                <div className='weapon-list-data__bar-charts__value-container'>
+                    <span className='weapon-list-data__bar-charts__value'>{props.averageDps}</span>
+                </div>
                 </div>
                 <div className='weapon-list-data__bar-charts'>
                 <div>Headshot dps</div>
-                <div><span className='weapon-list-data__bar-charts__value'>{props.headshotDps}</span></div>
+                <BarChart
+                    dataValue={props.headshotDps}
+                    dataTitle='Headshot dps'
+                />
+                <div className='weapon-list-data__bar-charts__value-container'>
+                    <span className='weapon-list-data__bar-charts__value'>{props.headshotDps}</span>
+                </div>
                 </div>
                 <div className='weapon-list-data__bar-charts'>
                 <div>Legshot dps</div>
-                <div><span className='weapon-list-data__bar-charts__value'>{props.legshotDps}</span></div>
+                <BarChart
+                    dataValue={props.legshotDps}
+                    dataTitle='Legshot dps'
+                />
+                <div className='weapon-list-data__bar-charts__value-container'>
+                    <span className='weapon-list-data__bar-charts__value'>{props.legshotDps}</span>
+                </div>
                 </div>
             </> 
             }   
