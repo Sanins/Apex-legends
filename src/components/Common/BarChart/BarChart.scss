@@ -1,0 +1,14 @@
+.bar-chart {
+    width: 80%;
+    text-align: center;
+    &__svg {
+        &__background {
+            fill: #000;
+            height: 10px;
+        }
+        &__live-data { 
+            fill: #bdc0cf;
+            height: 10px;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Heading from "../../../Common/Heading/Heading"
 import RadialChart from '../../../Common/RadialChart/RadialChart'
+import BarChart from '../../../Common/BarChart/BarChart'
 import WeaponListExtraInfo from './../WeaponListExtraInfo/WeaponListExtraInfo'
 import './WeaponListData.scss';
 
@@ -59,7 +60,13 @@ export default function WeaponListData(props: WeaponListDataProps) {
             <div className='weapon-list-data__bar-charts-container'>
                 <div className='weapon-list-data__bar-charts'>
                     <div>Damage per second</div>
-                    <div><span className='weapon-list-data__bar-charts__value'>{props.damagePerSecond}</span></div>
+                    <BarChart
+                        dataValue={props.damagePerSecond}
+                        dataTitle='Damage per second'
+                    />
+                    <div>
+                        <span className='weapon-list-data__bar-charts__value'>{props.damagePerSecond}</span>
+                    </div>
                 </div>
                 <div className='weapon-list-data__bar-charts'>
                     <div>Headshot damage</div>

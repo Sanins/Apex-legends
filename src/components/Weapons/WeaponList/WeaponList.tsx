@@ -7,13 +7,19 @@ import { WeaponListProps } from "../../Types/Types";
 import Heading from "../../Common/Heading/Heading"
 import './WeaponList.scss';
 import clsx from "clsx";
+import useComponentVisible from "../../Common/Utils/Utils";
 
 const WeaponList: React.FC<{}> = () => {
 
   const [serviceValue, setServiceValue] = useState('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/assault-rifles.json');
   const [activeWeaponTypeValue, setActiveWeaponTypeValue] = useState(0);
   const [activeWeaponValue, setActiveWeaponValue] = useState(0);
-  const [showText, setShowText] = useState(false);
+
+  const {
+    ref,
+    isComponentVisible,
+    setIsComponentVisible
+  } = useComponentVisible(false);
 
   const handleWeaponChange = (param: number) => (e: any) => {
     switch (param) {
@@ -78,36 +84,6 @@ const WeaponList: React.FC<{}> = () => {
               Weapons
             </Heading>
           </div>
-          {/* <div className='weapon-list-mobile'>
-              <div className='weapon-list-mobile__weapon-type'>
-                  <div className='weapon-filter__item'>
-                      <label className='weapon-filter__item__label'>Weapon Type</label>
-                      <select className='weapon-filter__item__select'>
-                          <option>Select...</option>
-                          <option value="0">Assault Rifles</option>
-                          <option value="1">Sub Machine Guns</option>
-                          <option value="2">Light Machine Guns</option>
-                          <option value="3">Shotguns</option>
-                          <option value="4">Sniper Rifles</option>
-                          <option value="5">Pistols</option>
-                      </select>
-                  </div>
-              </div>
-              <div className='weapon-list-mobile__weapon'>
-                  <div className='weapon-filter__item'>
-                      <label className='weapon-filter__item__label'>Which Weapon?</label>
-                      <select className='weapon-filter__item__select'>
-                          <option>Select...</option>
-                          <option value="0">Assault Rifles</option>
-                          <option value="1">Sub Machine Guns</option>
-                          <option value="2">Light Machine Guns</option>
-                          <option value="3">Shotguns</option>
-                          <option value="4">Sniper Rifles</option>
-                          <option value="5">Pistols</option>
-                      </select>
-                  </div>
-              </div>
-          </div> */}
           <div className='weapon-list__information'>
             <div className='weapon-type-filters'>
               <WeaponTypeFilters
@@ -123,12 +99,12 @@ const WeaponList: React.FC<{}> = () => {
             <div className='weapon-list-filters'>
               <div className='weapon-list-filters__mobile-btn-wrapper'>
                 <label>Weapon Selection</label>
-                  <a onClick={() => setShowText(!showText)} className='mobile-dropdown-btn'>Select...</a>
+                  <a ref={ref} onClick={() => setIsComponentVisible(true)} className='mobile-dropdown-btn'>Select...</a>
               </div>
-              <div className={clsx('weapon-list-filters__list', showText && 'weapon-list-filters__show')}>
+              <div className={clsx('weapon-list-filters__list', isComponentVisible && 'weapon-list-filters__show')}>
                 {service.payload.map((weaponCategories: WeaponListProps, key: number) => (
                   <WeaponListFilters
-                    key={key}
+                    keyValue={key}
                     name={weaponCategories.name}
                     activeWeaponValue={activeWeaponValue}
                     handleWeaponChange={handleWeaponChange(key)}
@@ -149,7 +125,7 @@ const WeaponList: React.FC<{}> = () => {
                         damage={weaponCategories.damage}
                         damagePerSecond={weaponCategories.damage_per_second}
                         damagePerMagazine={weaponCategories.damage_per_magazine}
-                        headshotDamage={weaponCategories.headshot_dps}
+                        headshotDamage={weaponCategories.headshot_damage}
                         headshotDps={weaponCategories.headshot_dps}
                         legshotDamage={weaponCategories.legshot_damage}
                         rateOfFire={weaponCategories.rate_of_fire}

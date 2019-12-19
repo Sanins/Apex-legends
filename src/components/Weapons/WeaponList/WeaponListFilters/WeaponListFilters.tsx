@@ -3,21 +3,22 @@ import './WeaponListFilters.scss';
 import clsx from "clsx";
 
 interface WeaponListFiltersProps {
-    key: number;
+    keyValue: any;
     name: string;
     activeWeaponValue: any;
     handleWeaponChange: any;
 }
 
 export default function WeaponListFilters(props: WeaponListFiltersProps) {
+
     return (
         <div className='weapon-list-filters__list-item-container' onClick={props.handleWeaponChange} >
             <a
-                key={props.key}
+                key={props.keyValue}
                 onClick={props.handleWeaponChange}
                 className={
                         clsx('weapon-list-filters__list-item',
-                        props.activeWeaponValue === props.key && 'weapon-list-filters__list-item__active'
+                        props.activeWeaponValue === props.keyValue && 'weapon-list-filters__list-item__active'
                     )
                 }
             >
