@@ -4,6 +4,7 @@ import './BarChart.scss';
 interface BarChartProps {
     dataTitle: any;
     dataValue: any;
+    dataName?: any;
 }
 
 export default function BarChart(props: BarChartProps) {
@@ -28,7 +29,7 @@ export default function BarChart(props: BarChartProps) {
         };
     });
 
-    const trueValue = (props.dataValue / highestValue) * 100; 
+    const trueValue = ((props.dataValue / highestValue) * 100).toFixed(2); 
 
     return (
         <div className='bar-chart'>
