@@ -19,7 +19,7 @@ const LegendList: React.FC<{}> = () => {
             <h1>Legends</h1>
             <div className='legend-list__list-of-legends'>
               {service.payload.map((legends: LegendListProps, key:any) => (
-                  <Link to={`/legends/${legends.name}`}>
+                  <Link key={key} to={`/legends/${legends.name}`}>
                     {legends.name}     
                   </Link>                     
               ))}

@@ -71,9 +71,10 @@ const WeaponList: React.FC<{}> = () => {
 
   return (
     <>
-      {/* {service.status === 'loading' && (
-        <p>Loading</p>
-      )} */}
+      {service.status === 'loading' && (
+        <div className='weapon-list__loading-screen'>
+        </div>
+      )}
 
       {service.status === 'loaded' &&
         <div className='weapon-list'>
@@ -104,6 +105,7 @@ const WeaponList: React.FC<{}> = () => {
               <div className={clsx('weapon-list-filters__list', isComponentVisible && 'weapon-list-filters__show')}>
                 {service.payload.map((weaponCategories: WeaponListProps, key: number) => (
                   <WeaponListFilters
+                    key={key}
                     keyValue={key}
                     name={weaponCategories.name}
                     activeWeaponValue={activeWeaponValue}
@@ -118,6 +120,7 @@ const WeaponList: React.FC<{}> = () => {
                   {key === activeWeaponValue &&
                     <>
                       <WeaponListData
+                        key={key}
                         ammoCapacity={weaponCategories.ammo_capacity}
                         averageDps={weaponCategories.average_dps}
                         name={weaponCategories.name}

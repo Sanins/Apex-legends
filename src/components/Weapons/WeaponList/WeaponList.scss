@@ -2,6 +2,11 @@
 @import './../../Common/colours.scss';
 
 .weapon-list {
+
+    &__loading-screen {
+        height: 100vh;
+    }
+
     &__title {
         margin: 20px;
         text-align: center;

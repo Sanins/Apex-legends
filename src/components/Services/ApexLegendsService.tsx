@@ -12,7 +12,7 @@ const ApexLegendsService = (serviceOption: ApexData) => {
       .then(response => response.json())
       .then(response => setResult({ status: 'loaded', payload: response }))
       .catch(error => setResult({ status: 'error', error }));
-  }, []);
+  }, [serviceOption]);
 
   return result;
 };
