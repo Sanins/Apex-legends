@@ -13,22 +13,24 @@ export default function WeaponListFilters(props: WeaponListFiltersProps, index:a
 
     return (
         <div key={index} className='weapon-list-filters__list-item-container' onClick={props.handleWeaponChange} >
-            <button
-                key={props.keyValue}
-                onClick={props.handleWeaponChange}
-                className={
-                        clsx('weapon-list-filters__list-item',
-                        props.activeWeaponValue === props.keyValue && 'weapon-list-filters__list-item__active'
-                    )
-                }
-            >
-                {props.name}
-            </button>
-            <img 
-                alt={props.name}
-                className='weapon-list-filters__list-image' 
-                src={require(`./../Large-icons/${props.name}.png`)} 
-            />
+            <div className='weapon-list-filters__list-item-container__inside'>
+                <button
+                    key={props.keyValue}
+                    onClick={props.handleWeaponChange}
+                    className={
+                            clsx('weapon-list-filters__list-item',
+                            props.activeWeaponValue === props.keyValue && 'weapon-list-filters__list-item__active'
+                        )
+                    }
+                >
+                    {props.name}
+                </button>
+                <img 
+                    alt={props.name}
+                    className='weapon-list-filters__list-image' 
+                    src={require(`./../Large-icons/${props.name}.png`)} 
+                />
+            </div>
         </div>
     )
  };

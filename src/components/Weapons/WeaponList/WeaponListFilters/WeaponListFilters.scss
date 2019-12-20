@@ -45,14 +45,24 @@
             display: none;
         }
     }
+
     &__list-item-container {
-        background: transparent;
-        border: none;
+        margin: 20px;
         text-align: center;
         cursor: pointer;
 
         @media only screen and (max-width: 700px) { 
             text-align: left;
+        }
+
+        &:first-child {
+            margin-top: 0px;
+        }
+
+        &__inside {
+            padding-bottom: 10px;
+            background: #00000026;
+            border: 1px solid #0000000f;
         }
     }
 
@@ -65,9 +75,7 @@
             cursor: pointer;
         }
 
-        &__active{
-            background: transparent;
-            border: none;
+        &__active {
             color: #b33834;
             padding: 10px 0;
             cursor: default;
