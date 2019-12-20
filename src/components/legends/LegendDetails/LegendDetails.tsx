@@ -19,6 +19,7 @@ export default function LegendDetails(props: any) {
                                 </div>
                                 <div className='legend-details__character-image'>
                                     <img 
+                                        alt={legends.name}
                                         src={require(`./../Images/${legends.name}.png`)}
                                     />
                                 </div>

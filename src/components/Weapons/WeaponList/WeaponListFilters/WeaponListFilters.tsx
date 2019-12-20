@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './WeaponListFilters.scss';
 import clsx from "clsx";
 
@@ -9,11 +9,11 @@ interface WeaponListFiltersProps {
     handleWeaponChange: any;
 }
 
-export default function WeaponListFilters(props: WeaponListFiltersProps) {
+export default function WeaponListFilters(props: WeaponListFiltersProps, index:any) {
 
     return (
-        <div className='weapon-list-filters__list-item-container' onClick={props.handleWeaponChange} >
-            <a
+        <div key={index} className='weapon-list-filters__list-item-container' onClick={props.handleWeaponChange} >
+            <button
                 key={props.keyValue}
                 onClick={props.handleWeaponChange}
                 className={
@@ -23,8 +23,9 @@ export default function WeaponListFilters(props: WeaponListFiltersProps) {
                 }
             >
                 {props.name}
-            </a>
+            </button>
             <img 
+                alt={props.name}
                 className='weapon-list-filters__list-image' 
                 src={require(`./../Large-icons/${props.name}.png`)} 
             />

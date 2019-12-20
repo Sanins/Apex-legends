@@ -99,7 +99,7 @@ const WeaponList: React.FC<{}> = () => {
             <div className='weapon-list-filters'>
               <div className='weapon-list-filters__mobile-btn-wrapper'>
                 <label>Weapon Selection</label>
-                  <a ref={ref} onClick={() => setIsComponentVisible(true)} className='mobile-dropdown-btn'>Select...</a>
+                  <button ref={ref} onClick={() => setIsComponentVisible(true)} className='mobile-dropdown-btn'>Select...</button>
               </div>
               <div className={clsx('weapon-list-filters__list', isComponentVisible && 'weapon-list-filters__show')}>
                 {service.payload.map((weaponCategories: WeaponListProps, key: number) => (

@@ -15,11 +15,11 @@ interface RadialChartProps {
 }
 
 export default function RadialChart(props: RadialChartProps) {
-    const [strokeValue, setStrokeLength] = React.useState(false);
+    const [strokeValue, setStrokeValue] = React.useState(false);
 
     useEffect(() => {
         setTimeout(() => {
-            setStrokeLength(true)
+            setStrokeValue(true)
         });
     });
 
@@ -54,8 +54,8 @@ export default function RadialChart(props: RadialChartProps) {
                     cy="90"
                     r={circleRadius}
                 />
-                <text x="50%" y="40%" className="radial-chart__title" text-anchor="middle" dy=".3em">{titleText}</text>
-                <text x="50%" y="60%" className="radial-chart__value"  text-anchor="middle" dy=".3em">{valueText}</text>
+                <text x="50%" y="40%" className="radial-chart__title" textAnchor="middle" dy=".3em">{titleText}</text>
+                <text x="50%" y="60%" className="radial-chart__value"  textAnchor="middle" dy=".3em">{valueText}</text>
                 <circle
                     className="radial-chart-progress"
                     stroke={colorProgress}

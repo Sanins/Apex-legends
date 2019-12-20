@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Heading from "../../../Common/Heading/Heading"
 import RadialChart from '../../../Common/RadialChart/RadialChart'
 import BarChart from '../../../Common/BarChart/BarChart'
@@ -29,7 +29,7 @@ export default function WeaponListData(props: WeaponListDataProps) {
         <>
             <div className='weapon-list-data__title-container'>
                 <Heading headingType={3}>{props.name}</Heading>
-                <img className='weapon-list-data__weapon-image' src={require(`./../Icons/${props.name}.png`)} />
+                <img alt={props.name} className='weapon-list-data__weapon-image' src={require(`./../Icons/${props.name}.png`)} />
             </div>
             <div className='weapon-list-data__radial-graphs'>
                 <div>
@@ -63,6 +63,7 @@ export default function WeaponListData(props: WeaponListDataProps) {
                     <BarChart
                         dataValue={props.damagePerSecond}
                         dataTitle='Damage per second'
+                        dataName={props.name}
                     />
                     <div className='weapon-list-data__bar-charts__value-container'>
                         <span className='weapon-list-data__bar-charts__value'>{props.damagePerSecond}</span>

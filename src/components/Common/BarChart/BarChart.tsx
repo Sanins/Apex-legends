@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './BarChart.scss';
 
 interface BarChartProps {
@@ -9,8 +9,15 @@ interface BarChartProps {
 
 export default function BarChart(props: BarChartProps) {
     const [highestValue, setHighestValue] = React.useState(0);
+    const [barChartValue, setBarChartValue] = React.useState(false);
 
     useEffect(() => {
+        setTimeout(() => {
+            setBarChartValue(true)
+        });
+    });
+
+    useEffect(() =>  {
         switch (props.dataTitle) {
             case 'Damage per second':
                 return setHighestValue(255);
@@ -27,16 +34,16 @@ export default function BarChart(props: BarChartProps) {
             case 'Legshot dps':
                 return setHighestValue(200);       
         };
-    });
+    }, [props.dataTitle]);
 
-    const trueValue = ((props.dataValue / highestValue) * 100).toFixed(2); 
+    const trueValue = barChartValue ? ((props.dataValue / highestValue) * 100).toFixed(2) + '%': 0; 
 
     return (
         <div className='bar-chart'>
             <svg className='bar-chart__svg'>
                 <g>
                     <rect className='bar-chart__svg__background' width='100%' ></rect>
-                    <rect className='bar-chart__svg__live-data' width={trueValue + '%'}></rect>
+                    <rect className='bar-chart__svg__live-data' width={trueValue}></rect>
                 </g>
             </svg>
         </div>

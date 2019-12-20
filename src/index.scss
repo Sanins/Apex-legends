@@ -58,7 +58,13 @@ hr {
   background: rgba(255,255,255,0.15);
 }
 
+button {
+  background: transparent;
+  border: none;
+}
+
 .mobile-dropdown-btn {
+  border: none;
   width: 200px;
   padding: .75em 2.5em .75em .75em;
   background: $graph-bg url(./components/Weapons/WeaponFilter/arrow-down.png) no-repeat;

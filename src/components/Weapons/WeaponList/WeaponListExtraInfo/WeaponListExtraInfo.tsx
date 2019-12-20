@@ -13,7 +13,7 @@ export default function WeaponListExtraInfo(props: WeaponListExtraInfoProps) {
 
     return (
         <div className='weapon-list-extra-info'>
-            <a className='weapon-list-extra-info__link' onClick={() => setShowText(!showText)}>How is 'damage per second' calculated?</a>
+            <button className='weapon-list-extra-info__link' onClick={() => setShowText(!showText)}>How is 'damage per second' calculated?</button>
             {showText &&
             <>
                 <div className='weapon-list-extra-info__paragraph'>

@@ -5,6 +5,8 @@
     margin: 10px 0;
 
     &__link {
+        background: transparent;
+        border: none;
         color: $text-color;
         text-decoration: underline;
         cursor: pointer;

@@ -14,8 +14,6 @@ const ApexLegendsService = (serviceOption: ApexData) => {
       .catch(error => setResult({ status: 'error', error }));
   }, []);
 
-  console.log(result);
-
   return result;
 };
 
