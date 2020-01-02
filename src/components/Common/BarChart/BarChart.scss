@@ -1,3 +1,5 @@
+@import './../../Common/colours.scss';
+
 .bar-chart {
     width: 100%;
     text-align: center;
@@ -7,11 +9,11 @@
         padding-top: 7px;
         
         &__background {
-            fill: #000;
+            fill: $grey;
             height: 10px;
         }
         &__live-data { 
-            fill: #bdc0cf;
+            fill: $secondary; 
             height: 10px;
         }
     }

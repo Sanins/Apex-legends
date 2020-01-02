@@ -4,7 +4,7 @@ body {
   margin: 0;
   color: $text-color;
   font-weight: 300;
-  background: #21212a;
+  background: #FFFFFF;
   font-family: "Roboto", sans-serif;
 }
 
@@ -36,9 +36,9 @@ a {
   font-size: 16px;
   line-height: 40px;
   text-decoration: none;
-  background: linear-gradient(135deg, #b33834 50%, #cc524e 100%);
+  background: linear-gradient(135deg, #0ccc8d 50%, #00a971 100%);
   border: 0;
-  border-bottom: 1px solid #cc524e;
+  border-bottom: 1px solid #0fab78;
   color: #FFF;
   -webkit-transition: padding 100ms;
   transition: padding 100ms;

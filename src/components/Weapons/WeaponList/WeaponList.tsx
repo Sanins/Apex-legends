@@ -82,7 +82,6 @@ const WeaponList: React.FC<{}> = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(sortByValue, weaponType);
     if (sortByValue === '') {
       setSelectError(true);
     } else if(weaponType === '') {

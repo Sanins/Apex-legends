@@ -36,7 +36,7 @@ export default function WeaponListData(props: WeaponListDataProps) {
                     <RadialChart
                         progress={props.damage}
                         colorTotal="#000"
-                        colorProgress="#bdc0cf"
+                        colorProgress="#43655A"
                         radius={80}
                         strokeWidth={14}
                         dimension={140}
@@ -48,7 +48,7 @@ export default function WeaponListData(props: WeaponListDataProps) {
                     <RadialChart
                         progress={props.rateOfFire / 12}
                         colorTotal="#000"
-                        colorProgress="#bdc0cf"
+                        colorProgress="#43655A"
                         radius={80}
                         strokeWidth={14}
                         dimension={140}

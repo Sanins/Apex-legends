@@ -18,8 +18,9 @@
     }
     &__weapon-image {
         margin-right: 10px;
-        max-width: 150px;
+        max-width: 120px;
         max-height: 60px;
+        background: $primary;
     }
     &__radial-graphs {
         display: flex;
@@ -52,7 +53,7 @@
         }
 
         &__value {
-            color: #fff;
+            color: $text-color;
             font-size: 16px;
             line-height: 7px;
             font-family: "Teko", sans-serif;
