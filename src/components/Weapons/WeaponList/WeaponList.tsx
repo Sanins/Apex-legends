@@ -70,9 +70,10 @@ const WeaponList: React.FC<{}> = () => {
 
   const [weaponType, setWeaponType] = useState('');
   const [sortByValue, setSortByValue] = useState('');
+  const [selectError, setSelectError] = useState(false);
 
   const handleSelectWeaponTypeChange = (e:any) => {
-      setWeaponType(e.target.value);
+    setWeaponType(e.target.value);
   }; 
 
   const handleSortByChange = (e: any) => {
@@ -81,8 +82,15 @@ const WeaponList: React.FC<{}> = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/sort/${weaponType}/${sortByValue}`);
-    console.log()
+    console.log(sortByValue, weaponType);
+    if (sortByValue === '') {
+      setSelectError(true);
+    } else if(weaponType === '') {
+      setSelectError(true);
+    } else {
+      setSelectError(false);
+      setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/sort/${weaponType}/${sortByValue}`);
+    }
   };
 
   const service = ApexLegendsByUrlService(serviceValue);
@@ -121,6 +129,7 @@ const WeaponList: React.FC<{}> = () => {
                   weaponTypeChange={handleSelectWeaponTypeChange}
                   weaponType={weaponType}
                   sortByValue={sortByValue}
+                  error={selectError}
                 />
               </div>
             </div>

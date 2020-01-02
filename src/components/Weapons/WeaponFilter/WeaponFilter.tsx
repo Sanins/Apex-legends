@@ -7,6 +7,7 @@ interface WeaponFilterProps {
     weaponTypeChange: any;
     weaponType: any;
     sortByValue:any;
+    error: any;
 }
 
 export default function WeaponFilter(props: WeaponFilterProps, index:any) {
@@ -19,7 +20,7 @@ export default function WeaponFilter(props: WeaponFilterProps, index:any) {
                 <div className='weapon-filter__item'>
                     <label className='weapon-filter__item__label'>Weapon Type</label>
                     <select onChange={props.weaponTypeChange} value={props.weaponType}  className='weapon-filter__item__select'>
-                        <option>All</option>
+                        <option value=''>All</option>
                         <option value="assault-rifles">Assault Rifles</option>
                         <option value="sub-machine-guns">Sub Machine Guns</option>
                         <option value="light-machine-guns">Light Machine Guns</option>
@@ -31,7 +32,7 @@ export default function WeaponFilter(props: WeaponFilterProps, index:any) {
                 <div className='weapon-filter__item'>
                     <label className='weapon-filter__item__label'>Sort by</label>
                     <select onChange={props.sortByChange} value={props.sortByValue} className='weapon-filter__item__select'>
-                        <option>Select...</option>
+                        <option value=''>Select...</option>
                         <option value="damage">Damage</option>
                         <option value="rate-of-fire">Rate of fire</option>
                         <option value="damage-per-second">Damage per second</option>
@@ -42,6 +43,9 @@ export default function WeaponFilter(props: WeaponFilterProps, index:any) {
                         <option value="projectile-speed">Projectile speed</option>
                     </select>
                 </div>   
+                {props.error &&
+                    <p>Both values need to be selected</p>
+                }
                 <button className='button weapon-filter__item__btn'>Filter</button>
             </form>
         </div>
