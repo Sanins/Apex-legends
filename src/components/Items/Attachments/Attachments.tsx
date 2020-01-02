@@ -12,7 +12,7 @@ export default function Attachments() {
 	const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState();
   
-  const service = ApexLegendsByUrlService('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/assault-rifles.json');
+  const service = ApexLegendsByUrlService(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/assault-rifles.json`);
 
 	useEffect(() => {
 		const getWeaponList = async () => {

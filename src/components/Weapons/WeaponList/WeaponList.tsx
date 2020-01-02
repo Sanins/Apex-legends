@@ -8,11 +8,11 @@ import { WeaponListProps } from "../../Types/Types";
 import Heading from "../../Common/Heading/Heading"
 import './WeaponList.scss';
 import clsx from "clsx";
-import useComponentVisible from "../../Common/Utils/Utils";
+import useComponentVisible from "../../Common/Utils/Utils"
 
 const WeaponList: React.FC<{}> = () => {
 
-  const [serviceValue, setServiceValue] = useState('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/assault-rifles.json');
+  const [serviceValue, setServiceValue] = useState(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/assault-rifles.json`);
   const [activeWeaponTypeValue, setActiveWeaponTypeValue] = useState(0);
   const [activeWeaponValue, setActiveWeaponValue] = useState(0);
 
@@ -44,27 +44,27 @@ const WeaponList: React.FC<{}> = () => {
       case 0:
         setActiveWeaponTypeValue(0);
         setActiveWeaponValue(0);
-        return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/assault-rifles.json');
+        return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/assault-rifles.json`);
       case 1:
         setActiveWeaponTypeValue(1);
         setActiveWeaponValue(0);
-        return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/sub-machine-guns.json');
+        return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/sub-machine-guns.json`);
       case 2:
         setActiveWeaponTypeValue(2);
         setActiveWeaponValue(0);
-        return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/light-machine-guns');
+        return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/light-machine-guns`);
       case 3:
         setActiveWeaponTypeValue(3);
         setActiveWeaponValue(0);
-        return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/shotguns');
+        return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/shotguns`);
       case 4:
         setActiveWeaponTypeValue(4);
         setActiveWeaponValue(0);
-        return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/sniper-rifles');
+        return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/sniper-rifles`);
       case 5:
         setActiveWeaponTypeValue(5);
         setActiveWeaponValue(0);
-        return setServiceValue('https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/pistols');
+        return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/pistols`);
     };
   };
 
@@ -81,7 +81,7 @@ const WeaponList: React.FC<{}> = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    setServiceValue(`https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/sort/${weaponType}/${sortByValue}`);
+    setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/sort/${weaponType}/${sortByValue}`);
     console.log()
   };
 

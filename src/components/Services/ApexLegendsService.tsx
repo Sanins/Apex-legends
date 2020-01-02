@@ -8,7 +8,7 @@ const ApexLegendsService = (serviceOption: ApexData) => {
   });
 
   useEffect(() => {
-    fetch(`https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/${serviceOption}.json`)
+    fetch(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/${serviceOption}.json`)
       .then(response => response.json())
       .then(response => setResult({ status: 'loaded', payload: response }))
       .catch(error => setResult({ status: 'error', error }));
