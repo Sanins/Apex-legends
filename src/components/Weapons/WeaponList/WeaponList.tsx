@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ApexLegendsByUrlService from './../../Services/ApexLegendsByUrlService';
 import WeaponListData from './WeaponListData/WeaponListData'
+import WeaponFilter from './../WeaponFilter/WeaponFilter';
 import WeaponTypeFilters from './WeaponTypeFilters/WeaponTypeFilters'
 import WeaponListFilters from './WeaponListFilters/WeaponListFilters'
 import { WeaponListProps } from "../../Types/Types";
@@ -67,6 +68,23 @@ const WeaponList: React.FC<{}> = () => {
     };
   };
 
+  const [weaponType, setWeaponType] = useState('');
+  const [sortByValue, setSortByValue] = useState('');
+
+  const handleSelectWeaponTypeChange = (e:any) => {
+      setWeaponType(e.target.value);
+  }; 
+
+  const handleSortByChange = (e: any) => {
+    setSortByValue(e.target.value);
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    setServiceValue(`https://www.apexdata.gg/api/OA1rrltgyhMHfknCo2dbFQtt/weapons/sort/${weaponType}/${sortByValue}`);
+    console.log()
+  };
+
   const service = ApexLegendsByUrlService(serviceValue);
 
   return (
@@ -87,15 +105,24 @@ const WeaponList: React.FC<{}> = () => {
           </div>
           <div className='weapon-list__information'>
             <div className='weapon-type-filters'>
-              <WeaponTypeFilters
-                assaultRifles={handleWeaponTypeChange(0)}
-                subMachineGuns={handleWeaponTypeChange(1)}
-                lightMachineGuns={handleWeaponTypeChange(2)}
-                shotguns={handleWeaponTypeChange(3)}
-                sniperRifles={handleWeaponTypeChange(4)}
-                pistols={handleWeaponTypeChange(5)}
-                activeWeapon={activeWeaponTypeValue}
-              />
+              <div className='weapon-type-filters__list-wrapper'>
+                <WeaponTypeFilters
+                  assaultRifles={handleWeaponTypeChange(0)}
+                  subMachineGuns={handleWeaponTypeChange(1)}
+                  lightMachineGuns={handleWeaponTypeChange(2)}
+                  shotguns={handleWeaponTypeChange(3)}
+                  sniperRifles={handleWeaponTypeChange(4)}
+                  pistols={handleWeaponTypeChange(5)}
+                  activeWeapon={activeWeaponTypeValue}
+                />
+                <WeaponFilter 
+                  submit={handleSubmit}
+                  sortByChange={handleSortByChange}
+                  weaponTypeChange={handleSelectWeaponTypeChange}
+                  weaponType={weaponType}
+                  sortByValue={sortByValue}
+                />
+              </div>
             </div>
             <div className='weapon-list-filters'>
               <div className='weapon-list-filters__mobile-btn-wrapper'>
