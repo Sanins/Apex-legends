@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './WeaponFilter.scss';
 import clsx from "clsx";
 import useComponentVisible from "../../Common/Utils/Utils"

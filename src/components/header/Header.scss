@@ -17,11 +17,6 @@
 
     &__bottom {
         background: $primary;
-
-        @media only screen and (max-width: 1100px) { 
-            position: absolute;
-            width: 100%;
-        }
     }
 
     &__list-item {
@@ -33,6 +28,12 @@
 
         @media only screen and (max-width: 1100px) { 
             display: grid;
+            position: absolute;
+            width: 100%;
+            top: 58px;
+            background: $primary;
+            animation: fadein 0.5s;
+            left: 0;
         }
     }
 
