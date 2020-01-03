@@ -1,11 +1,11 @@
 .wrapper {
-    max-width: calc(1240px + 10vw);
+    max-width: calc(1240px + 6vw);
     padding: 0 5vw;
     margin: 0 auto;
 }
 
 .top-offset {
-    padding-top: 80px;
+    padding-top: 60px;
 
     @media only screen and (max-width: 1100px) { 
         padding-top: 50px;

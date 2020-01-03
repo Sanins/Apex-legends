@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import './WeaponFilter.scss';
+import clsx from "clsx";
 
 interface WeaponFilterProps {
     submit: any;
@@ -11,8 +12,13 @@ interface WeaponFilterProps {
 }
 
 export default function WeaponFilter(props: WeaponFilterProps, index:any) {
+    const [showText, setShowText] = useState(false);
+    
     return (
-        <div className='weapon-filter'>
+        <>
+        <button onClick={() => setShowText(!showText)} className='weapon-filter__mobile-btn'>Filter by category</button>
+        {/* <div className='weapon-filter'> */}
+        <div className={clsx('weapon-filter', showText && 'weapon-filter--show')}>
             <div className='weapon-filter__title'>
                 <h3 className='weapon-filter__title__text'>Filter</h3>
             </div>
@@ -20,7 +26,7 @@ export default function WeaponFilter(props: WeaponFilterProps, index:any) {
                 <div className='weapon-filter__item'>
                     <label className='weapon-filter__item__label'>Weapon Type</label>
                     <select onChange={props.weaponTypeChange} value={props.weaponType}  className='weapon-filter__item__select'>
-                        <option value=''>All</option>
+                        <option value=''>Select...</option>
                         <option value="assault-rifles">Assault Rifles</option>
                         <option value="sub-machine-guns">Sub Machine Guns</option>
                         <option value="light-machine-guns">Light Machine Guns</option>
@@ -49,5 +55,6 @@ export default function WeaponFilter(props: WeaponFilterProps, index:any) {
                 <button className='button weapon-filter__item__btn'>Filter</button>
             </form>
         </div>
+        </>
     )
 }
