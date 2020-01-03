@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './WeaponFilter.scss';
 import clsx from "clsx";
+import useComponentVisible from "../../Common/Utils/Utils"
 
 interface WeaponFilterProps {
     submit: any;
@@ -12,13 +13,17 @@ interface WeaponFilterProps {
 }
 
 export default function WeaponFilter(props: WeaponFilterProps, index:any) {
-    const [showText, setShowText] = useState(false);
-    
+
+    const {
+        ref,
+        isComponentVisible,
+        setIsComponentVisible
+    } = useComponentVisible(false);
+
     return (
         <>
-        <button onClick={() => setShowText(!showText)} className='weapon-filter__mobile-btn'>Filter by category</button>
-        {/* <div className='weapon-filter'> */}
-        <div className={clsx('weapon-filter', showText && 'weapon-filter--show')}>
+        <button onClick={() => setIsComponentVisible(true)}  className='weapon-filter__mobile-btn'>Filter by category</button>
+        <div ref={ref} className={clsx('weapon-filter', isComponentVisible && 'weapon-filter--show')}>
             <div className='weapon-filter__title'>
                 <h3 className='weapon-filter__title__text'>Filter</h3>
             </div>
