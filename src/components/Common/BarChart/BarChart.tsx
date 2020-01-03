@@ -38,7 +38,6 @@ export default function BarChart(props: BarChartProps) {
 		}
 	}, [props.dataTitle]);
 
-	// eslint-disable-next-line prefer-template
 	const trueValue = barChartValue ? ((props.dataValue / highestValue) * 100).toFixed(2) + '%' : 0;
 
 	return (

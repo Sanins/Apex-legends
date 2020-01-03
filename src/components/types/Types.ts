@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export type ApexData = 'legends' | 'weapons' |  'items' |  'equipment' | 'consumables' | 'grenades' | 'attachments';
 
 export interface WeaponListProps {
