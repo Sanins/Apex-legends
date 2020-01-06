@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BarChart should fetch data on mount 1`] = `
+<div
+  className="bar-chart"
+>
+  <svg
+    className="bar-chart__svg"
+  >
+    <g>
+      <rect
+        className="bar-chart__svg__background"
+        width="100%"
+      />
+      <rect
+        className="bar-chart__svg__live-data"
+        width={0}
+      />
+    </g>
+  </svg>
+</div>
+`;
