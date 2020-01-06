@@ -6,6 +6,7 @@ interface HeadingProps {
 	children: string;
 	headingType: number;
 }
+
 export default function Heading(props: HeadingProps) {
 	return (
 		<>
