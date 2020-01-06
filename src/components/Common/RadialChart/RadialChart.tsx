@@ -1,17 +1,18 @@
-import React, { useEffect } from 'react';
+/* eslint-disable no-magic-numbers */
+import React, { useEffect } from "react";
 import clsx from "clsx";
-import './RadialChart.scss';
+import "./RadialChart.scss";
 
 interface RadialChartProps {
-	className?: any;
+	className?: string;
 	radius?: any;
 	progress?: any;
-	strokeWidth?: any;
-	dimension?: any;
-	colorTotal?: any;
-	colorProgress?: any;
-	titleText: any;
-	valueText: any;
+	strokeWidth?: number;
+	dimension?: number;
+	colorTotal?: string;
+	colorProgress?: string;
+	titleText: string;
+	valueText: number;
 }
 
 export default function RadialChart(props: RadialChartProps) {
@@ -40,8 +41,8 @@ export default function RadialChart(props: RadialChartProps) {
 	const strokeLength = strokeValue ? circumference / 100 * progress : 0;
 	return (
 		<div
-			className={clsx('radial-chart', className, {
-				'no-progress': strokeLength === 0
+			className={clsx("radial-chart", className, {
+				"no-progress": strokeLength === 0
 			})}
 		>
 			<svg viewBox="0 0 180 180" width={dimension} height={dimension}>

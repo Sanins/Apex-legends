@@ -1,18 +1,24 @@
-import React, { useState } from "react";
-import ApexLegendsByUrlService from "./../../Services/ApexLegendsByUrlService";
-import WeaponListData from "./WeaponListData/WeaponListData";
-import WeaponFilter from "./../WeaponFilter/WeaponFilter";
-import WeaponTypeFilters from "./WeaponTypeFilters/WeaponTypeFilters";
-import WeaponListFilters from "./WeaponListFilters/WeaponListFilters";
-import { WeaponListProps } from "../../Types/Types";
-import Heading from "../../Common/Heading/Heading";
+/* eslint-disable no-magic-numbers */
 import "./WeaponList.scss";
+import ApexLegendsByUrlService from "./../../Services/ApexLegendsByUrlService";
+import Heading from "../../Common/Heading/Heading";
+import React, { useState } from "react";
+import WeaponFilter from "./../WeaponFilter/WeaponFilter";
+import WeaponListData from "./WeaponListData/WeaponListData";
+import WeaponListFilters from "./WeaponListFilters/WeaponListFilters";
+import WeaponTypeFilters from "./WeaponTypeFilters/WeaponTypeFilters";
 import clsx from "clsx";
 import useComponentVisible from "../../Common/Utils/Utils";
+import { WeaponListProps } from "../../Types/Types";
 
 const WeaponList: React.FC<{}> = () => {
 
-	const [serviceValue, setServiceValue] = useState(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/assault-rifles.json`);
+	const apiUrl = "https://www.apexdata.gg/api/";
+	// eslint-disable-next-line no-undef
+	const apiKey = process.env.REACT_APP_API_KEY;
+	const apiUrlWithKey = apiUrl + apiKey;
+
+	const [serviceValue, setServiceValue] = useState(`${apiUrlWithKey}/weapons/assault-rifles.json`);
 	const [activeWeaponTypeValue, setActiveWeaponTypeValue] = useState(0);
 	const [activeWeaponValue, setActiveWeaponValue] = useState(0);
 
@@ -36,36 +42,40 @@ const WeaponList: React.FC<{}> = () => {
 				return setActiveWeaponValue(4);
 			case 5:
 				return setActiveWeaponValue(5);
-		};
+			default:
+				return setActiveWeaponValue(0);
+		}
 	};
 
-	const handleWeaponTypeChange = (param: number) => (e: any) => {
+	const handleWeaponTypeChange = (param: number) => () => {
 		switch (param) {
 			case 0:
 				setActiveWeaponTypeValue(0);
 				setActiveWeaponValue(0);
-				return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/assault-rifles.json`);
+				return setServiceValue(`${apiUrlWithKey}/weapons/assault-rifles.json`);
 			case 1:
 				setActiveWeaponTypeValue(1);
 				setActiveWeaponValue(0);
-				return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/sub-machine-guns.json`);
+				return setServiceValue(`${apiUrlWithKey}/weapons/sub-machine-guns.json`);
 			case 2:
 				setActiveWeaponTypeValue(2);
 				setActiveWeaponValue(0);
-				return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/light-machine-guns`);
+				return setServiceValue(`${apiUrlWithKey}/weapons/light-machine-guns`);
 			case 3:
 				setActiveWeaponTypeValue(3);
 				setActiveWeaponValue(0);
-				return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/shotguns`);
+				return setServiceValue(`${apiUrlWithKey}/weapons/shotguns`);
 			case 4:
 				setActiveWeaponTypeValue(4);
 				setActiveWeaponValue(0);
-				return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/sniper-rifles`);
+				return setServiceValue(`${apiUrlWithKey}/weapons/sniper-rifles`);
 			case 5:
 				setActiveWeaponTypeValue(5);
 				setActiveWeaponValue(0);
-				return setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/pistols`);
-		};
+				return setServiceValue(`${apiUrlWithKey}/weapons/pistols`);
+			default:
+				return "";
+		}
 	};
 
 	const [weaponType, setWeaponType] = useState("");
@@ -88,7 +98,7 @@ const WeaponList: React.FC<{}> = () => {
 			setSelectError(true);
 		} else {
 			setSelectError(false);
-			setServiceValue(`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/sort/${weaponType}/${sortByValue}`);
+			setServiceValue(`${apiUrlWithKey}/weapons/sort/${weaponType}/${sortByValue}`);
 		}
 	};
 
@@ -108,7 +118,7 @@ const WeaponList: React.FC<{}> = () => {
 							headingType={2}
 						>
 							Weapons
-            </Heading>
+						</Heading>
 					</div>
 					<div className="weapon-list__information">
 						<div className="weapon-type-filters">
@@ -135,9 +145,19 @@ const WeaponList: React.FC<{}> = () => {
 						<div className="weapon-list-filters">
 							<div className="weapon-list-filters__mobile-btn-wrapper">
 								<label>Weapon Selection</label>
-								<button ref={ref} onClick={() => setIsComponentVisible(true)} className="mobile-dropdown-btn">Select...</button>
+								<button
+									ref={ref}
+									onClick={() => setIsComponentVisible(true)}
+									className="mobile-dropdown-btn"
+								>
+									Select...
+								</button>
 							</div>
-							<div className={clsx("weapon-list-filters__list", isComponentVisible && "weapon-list-filters__show")}>
+							<div
+								className={
+									clsx("weapon-list-filters__list", isComponentVisible && "weapon-list-filters__show")
+								}
+							>
 								{service.payload.map((weaponCategories: WeaponListProps, key: number) => (
 									<WeaponListFilters
 										key={key}

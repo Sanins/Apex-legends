@@ -1,9 +1,9 @@
-import * as React from 'react';
-
-import './Heading.scss';
+/* eslint-disable no-magic-numbers */
+import * as React from "react";
+import "./Heading.scss";
 
 interface HeadingProps {
-	children: any;
+	children: string;
 	headingType: number;
 }
 export default function Heading(props: HeadingProps) {

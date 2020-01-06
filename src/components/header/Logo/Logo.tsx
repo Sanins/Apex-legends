@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-export default function Logo() { 
-    return (
-        <div className='logo'>
-          Robert Apex logo
-        </div>
-    )
+export default function Logo() {
+	return (
+		<div className='logo'>
+			Robert Apex logo
+		</div>
+	);
 }

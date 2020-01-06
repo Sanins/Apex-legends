@@ -1,11 +1,11 @@
-import React from 'react';
-import './Home.scss';
+import React from "react";
+import "./Home.scss";
 
-function Home() { 
+function Home() {
 
-  return (
-    <p>Home</p>
-  );
+	return (
+		<p>Home</p>
+	);
 }
 
 export default Home;

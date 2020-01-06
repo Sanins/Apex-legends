@@ -262,9 +262,6 @@
         "no-unsafe-negation": "error",
         "no-unused-expressions": "error",
         "no-unused-labels": "error",
-        "no-unused-vars": [
-            1
-        ],
         "no-use-before-define": "off",
         "no-useless-call": "off",
         "no-useless-computed-key": "off",
@@ -356,13 +353,6 @@
             }
         ],
         "@typescript-eslint/no-var-requires": "error",
-        "@typescript-eslint/quotes": [
-            "error",
-            "double",
-            {
-                "avoidEscape": true
-            }
-        ],
         "@typescript-eslint/semi": [
             "error",
             "always"
