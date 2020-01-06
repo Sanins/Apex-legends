@@ -1,49 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Heading> renders as h1 1`] = `
-"<Fragment>
-  <h1 className=\\"heading__h1\\">
+<Fragment>
+  <h1
+    className="heading__h1"
+  >
     Heading
   </h1>
-</Fragment>"
+</Fragment>
 `;
 
 exports[`<Heading> renders as h2 1`] = `
-"<Fragment>
-  <h2 className=\\"heading__h2\\">
+<Fragment>
+  <h2
+    className="heading__h2"
+  >
     Heading
   </h2>
-</Fragment>"
+</Fragment>
 `;
 
 exports[`<Heading> renders as h3 1`] = `
-"<Fragment>
-  <h3 className=\\"heading__h3\\">
+<Fragment>
+  <h3
+    className="heading__h3"
+  >
     Heading
   </h3>
-</Fragment>"
+</Fragment>
 `;
 
 exports[`<Heading> renders as h4 1`] = `
-"<Fragment>
-  <h4 className=\\"heading__h4\\">
+<Fragment>
+  <h4
+    className="heading__h4"
+  >
     Heading
   </h4>
-</Fragment>"
+</Fragment>
 `;
 
 exports[`<Heading> renders as h5 1`] = `
-"<Fragment>
-  <h5 className=\\"heading__h5\\">
+<Fragment>
+  <h5
+    className="heading__h5"
+  >
     Heading
   </h5>
-</Fragment>"
+</Fragment>
 `;
 
 exports[`<Heading> renders as h6 1`] = `
-"<Fragment>
-  <h6 className=\\"heading__h6\\">
+<Fragment>
+  <h6
+    className="heading__h6"
+  >
     Heading
   </h6>
-</Fragment>"
+</Fragment>
 `;
