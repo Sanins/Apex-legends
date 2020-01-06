@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable complexity */
 import React from "react";
 import ApexLegendsService from "../../Services/ApexLegendsService";
@@ -133,7 +134,7 @@ export default function LegendDetails(props: any) {
 												</li>
 												<li className="ability__list-item">
 													Duration:
-                                                	<span className="ability__list-item--span" dangerouslySetInnerHTML={{ __html: (legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.duration || "N/A" : "N/A") }} />
+													<span className="ability__list-item--span" dangerouslySetInnerHTML={{ __html: (legends.abilities.ability_3.secondary_data ? legends.abilities.ability_3.secondary_data.duration || "N/A" : "N/A") }} />
 												</li>
 											</ul>
 										</div>

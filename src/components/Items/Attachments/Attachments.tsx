@@ -13,6 +13,7 @@ export default function Attachments() {
 	const [isError, setIsError] = useState();
 
 	const service = ApexLegendsByUrlService(
+		// eslint-disable-next-line no-undef
 		`https://www.apexdata.gg/api/${process.env.REACT_APP_API_KEY}/weapons/assault-rifles.json`
 	);
 

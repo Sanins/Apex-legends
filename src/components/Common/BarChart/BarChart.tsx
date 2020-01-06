@@ -39,7 +39,7 @@ export default function BarChart(props: BarChartProps) {
 		}
 	}, [props.dataTitle]);
 
-	const trueValue = barChartValue ? ((props.dataValue / highestValue) * 100).toFixed(2) + "%" : 0;
+	const trueValue = barChartValue ? `${((props.dataValue / highestValue) * 100).toFixed(2)  }%` : 0;
 
 	return (
 		<div className="bar-chart">
