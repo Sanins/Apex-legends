@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import React from "react";
 import { shallow } from "enzyme";
-import toJson from "enzyme-to-json";
 import Heading from "./Heading";
 
 describe("<Heading>", () => {
@@ -10,8 +9,8 @@ describe("<Heading>", () => {
 			<Heading headingType={1}>Heading</Heading>
 		);
 
-		expect(toJson(wrapper)).toMatchSnapshot();
-		expect(wrapper.hasClass("heading__h1"));
+		const headingClass = wrapper.find(".heading__h1");
+		expect(headingClass.exists()).toBe(true);
 		expect(wrapper.text()).toBe("Heading");
 	});
 
@@ -20,8 +19,8 @@ describe("<Heading>", () => {
 			<Heading headingType={2}>Heading</Heading>,
 		);
 
-		expect(toJson(wrapper)).toMatchSnapshot();
-		expect(wrapper.hasClass("heading__h2"));
+		const headingClass = wrapper.find(".heading__h2");
+		expect(headingClass.exists()).toBe(true);
 		expect(wrapper.text()).toBe("Heading");
 	});
 
@@ -30,8 +29,8 @@ describe("<Heading>", () => {
 			<Heading headingType={3}>Heading</Heading>,
 		);
 
-		expect(toJson(wrapper)).toMatchSnapshot();
-		expect(wrapper.hasClass("heading__h2"));
+		const headingClass = wrapper.find(".heading__h3");
+		expect(headingClass.exists()).toBe(true);
 		expect(wrapper.text()).toBe("Heading");
 	});
 
@@ -40,8 +39,8 @@ describe("<Heading>", () => {
 			<Heading headingType={4}>Heading</Heading>,
 		);
 
-		expect(toJson(wrapper)).toMatchSnapshot();
-		expect(wrapper.hasClass("heading__h2"));
+		const headingClass = wrapper.find(".heading__h4");
+		expect(headingClass.exists()).toBe(true);
 		expect(wrapper.text()).toBe("Heading");
 	});
 
@@ -50,8 +49,8 @@ describe("<Heading>", () => {
 			<Heading headingType={5}>Heading</Heading>,
 		);
 
-		expect(toJson(wrapper)).toMatchSnapshot();
-		expect(wrapper.hasClass("heading__h2"));
+		const headingClass = wrapper.find(".heading__h5");
+		expect(headingClass.exists()).toBe(true);
 		expect(wrapper.text()).toBe("Heading");
 	});
 
@@ -60,8 +59,8 @@ describe("<Heading>", () => {
 			<Heading headingType={6}>Heading</Heading>,
 		);
 
-		expect(toJson(wrapper)).toMatchSnapshot();
-		expect(wrapper.hasClass("heading__h2"));
+		const headingClass = wrapper.find(".heading__h6");
+		expect(headingClass.exists()).toBe(true);
 		expect(wrapper.text()).toBe("Heading");
 	});
 });
