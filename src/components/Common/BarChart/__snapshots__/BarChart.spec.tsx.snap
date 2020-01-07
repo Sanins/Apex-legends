@@ -1,22 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BarChart should fetch data on mount 1`] = `
-<div
-  className="bar-chart"
+exports[`BarChart should bring back the width value 400 1`] = `
+<BarChart
+  dataTitle="Headshot dps"
+  dataValue={50}
 >
-  <svg
-    className="bar-chart__svg"
+  <div
+    className="bar-chart"
   >
-    <g>
-      <rect
-        className="bar-chart__svg__background"
-        width="100%"
-      />
-      <rect
-        className="bar-chart__svg__live-data"
-        width={0}
-      />
-    </g>
-  </svg>
-</div>
+    <svg
+      className="bar-chart__svg"
+    >
+      <g>
+        <rect
+          className="bar-chart__svg__background"
+          width="100%"
+        />
+        <rect
+          className="bar-chart__svg__live-data"
+          width="12.50%"
+        />
+      </g>
+    </svg>
+  </div>
+</BarChart>
 `;
