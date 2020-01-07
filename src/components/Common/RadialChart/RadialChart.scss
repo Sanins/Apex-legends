@@ -17,12 +17,15 @@
         font-family: "Teko", sans-serif;
     }
 }
+
 .radial-chart.no-progress .radial-chart-progress {
     opacity: 0;
 }
+
 .radial-chart-total {
     opacity: 0.3;
 }
+
 .radial-chart-progress {
     transform: rotate(90deg);
     transform-origin: center;

@@ -1,6 +1,7 @@
 /* eslint-disable no-magic-numbers */
-import React, { useEffect } from "react";
 import "./BarChart.scss";
+import React, { useEffect } from "react";
+import clsx from "clsx";
 
 interface BarChartProps {
 	dataTitle: string;
@@ -42,7 +43,11 @@ export default function BarChart(props: BarChartProps) {
 	const trueValue = barChartValue ? `${((props.dataValue / highestValue) * 100).toFixed(2)  }%` : 0;
 
 	return (
-		<div className="bar-chart">
+		<div
+			className={clsx("bar-chart", {
+				"no-progress": trueValue === 0
+			})}
+		>
 			<svg className="bar-chart__svg">
 				<g>
 					<rect className="bar-chart__svg__background" width="100%" ></rect>
