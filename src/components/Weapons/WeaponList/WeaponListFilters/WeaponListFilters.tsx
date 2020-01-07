@@ -10,7 +10,6 @@ interface WeaponListFiltersProps {
 }
 
 export default function WeaponListFilters(props: WeaponListFiltersProps, index: any) {
-
 	return (
 		<div key={index} className="weapon-list-filters__list-item-container" onClick={props.handleWeaponChange} >
 			<div className="weapon-list-filters__list-item-container__inside">
