@@ -21,6 +21,9 @@ const WeaponList: React.FC<{}> = () => {
 	const [serviceValue, setServiceValue] = useState(`${apiUrlWithKey}/weapons/assault-rifles.json`);
 	const [activeWeaponTypeValue, setActiveWeaponTypeValue] = useState(0);
 	const [activeWeaponValue, setActiveWeaponValue] = useState(0);
+	const [weaponType, setWeaponType] = useState("");
+	const [sortByValue, setSortByValue] = useState("");
+	const [selectError, setSelectError] = useState(false);
 
 	const {
 		ref,
@@ -77,10 +80,6 @@ const WeaponList: React.FC<{}> = () => {
 				return "";
 		}
 	};
-
-	const [weaponType, setWeaponType] = useState("");
-	const [sortByValue, setSortByValue] = useState("");
-	const [selectError, setSelectError] = useState(false);
 
 	const handleSelectWeaponTypeChange = (e: any) => {
 		setWeaponType(e.target.value);
