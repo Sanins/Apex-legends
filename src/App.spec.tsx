@@ -7,7 +7,6 @@ import Consumables from "./components/Items/Consumables/Consumables";
 import Equipment from "./components/Items/Equipment/Equipment";
 import Grenades from "./components/Items/Grenades/Grenades";
 import Home from "./components/Home/Home";
-import ItemList from "./components/Items/ItemsList/ItemList";
 import LegendList from "./components/Legends/LegendList/LegendList";
 import WeaponList from "./components/Weapons/WeaponList/WeaponList";
 import { shallow } from "enzyme";
@@ -32,11 +31,6 @@ it("routes /legends/:legendId to LegendDetails", () => {
 it("routes /weapons to WeaponList", () => {
 	const component = shallow(<App/>);
 	expect(component.find("Route[exact=true][path='/weapons']").first().prop("component")).toBe(WeaponList);
-});
-
-it("routes /items to ItemList", () => {
-	const component = shallow(<App/>);
-	expect(component.find("Route[exact=true][path='/items']").first().prop("component")).toBe(ItemList);
 });
 
 it("routes /items/grenades to Grenades", () => {

@@ -1,5 +1,81 @@
+
+@import './../../Common/colours.scss';
+
 .legend-list {
     &__list-of-legends  {
         display: grid;
+        a {
+            color: $text-color;
+        }
+    }
+}
+
+.legends-banner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px 20px;
+
+    &__image {
+        width: 100%;
+    }
+
+    &__content {
+        position: absolute;
+        bottom: 0;
+        left: 5px;
+        padding: 13.3333333333px 10px;
+        width: calc(100% - 10px);
+        color: #FFF;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1em;
+        text-align: center;
+        background: linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 100%);
+    }
+
+    &__item {
+        position: relative;
+        flex: 0 0 calc(100% / 3);
+        width: calc(100% / 3);
+        max-width: 100%;
+        max-height: 200px;
+        padding: 0 5px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        filter: drop-shadow(0px 3px 7px rgba(0,0,0,0.1)) drop-shadow(0px 3px 27px rgba(0,0,0,0.05));
+        transition: transform 50ms;
+        transition: transform 50ms, -webkit-transform 50ms;
+    }
+}
+
+.legends-banner__item:hover, .legends-banner__item:active {
+    transform: scale(1.05);
+}
+
+@media (min-width: 1240px) {
+    .legends-banner__item {
+        flex: 0 0 calc(100% / 11);
+        width: calc(100% / 11);
+    }
+}
+
+@media (min-width: 768px) {
+    .legends-banner__item {
+        flex: 0 0 calc(100% / 6);
+        width: calc(100% / 6);
+        max-height: 250px;
+    }
+}
+
+@media (min-width: 560px) {
+    .legends-banner__item {
+        flex: 0 0 calc(100% / 5);
+        width: calc(100% / 5);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .legends-banner__item {
+        filter: none;
     }
 }

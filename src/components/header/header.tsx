@@ -63,10 +63,34 @@ export default function Header() {
 						<NavLink
 							onClick={() => setIsComponentVisible(false)}
 							activeClassName="header__list-item--selected"
-							exact to={"/items"}
+							exact to={"/items/grenades"}
 							className="header__list-item"
 						>
-							Items
+							Grenades
+						</NavLink>
+						<NavLink
+							onClick={() => setIsComponentVisible(false)}
+							activeClassName="header__list-item--selected"
+							exact to={"/items/consumables"}
+							className="header__list-item"
+						>
+							Consumables
+						</NavLink>
+						<NavLink
+							onClick={() => setIsComponentVisible(false)}
+							activeClassName="header__list-item--selected"
+							exact to={"/items/equipment"}
+							className="header__list-item"
+						>
+							Equipment
+						</NavLink>
+						<NavLink
+							onClick={() => setIsComponentVisible(false)}
+							activeClassName="header__list-item--selected"
+							exact to={"/items/attachments"}
+							className="header__list-item"
+						>
+							Attachments
 						</NavLink>
 					</ul>
 				</div>
