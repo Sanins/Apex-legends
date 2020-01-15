@@ -1,8 +1,15 @@
 import React from "react";
+import Heading from "../../Common/Heading/Heading";
 
 export default function Consumables() {
 
 	return (
-		<h1>Consumables</h1>
+		<div className="heading">
+			<Heading
+				headingType={2}
+			>
+				Consumables
+			</Heading>
+		</div>
 	);
 }

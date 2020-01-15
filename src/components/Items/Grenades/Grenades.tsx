@@ -1,8 +1,15 @@
 import React from "react";
+import Heading from "../../Common/Heading/Heading";
 
 export default function Grenades() {
 
 	return (
-		<h1>Grenades</h1>
+		<div className="heading">
+			<Heading
+				headingType={2}
+			>
+				Grenades
+			</Heading>
+		</div>
 	);
 }

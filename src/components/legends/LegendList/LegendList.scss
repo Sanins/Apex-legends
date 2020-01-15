@@ -45,37 +45,33 @@
         filter: drop-shadow(0px 3px 7px rgba(0,0,0,0.1)) drop-shadow(0px 3px 27px rgba(0,0,0,0.05));
         transition: transform 50ms;
         transition: transform 50ms, -webkit-transform 50ms;
-    }
-}
 
-.legends-banner__item:hover, .legends-banner__item:active {
-    transform: scale(1.05);
-}
+        &:hover {
+            transform: scale(1.05);
+        }
 
-@media (min-width: 1240px) {
-    .legends-banner__item {
-        flex: 0 0 calc(100% / 11);
-        width: calc(100% / 11);
-    }
-}
+        &:active {
+            transform: scale(1.05);
+        }
 
-@media (min-width: 768px) {
-    .legends-banner__item {
-        flex: 0 0 calc(100% / 6);
-        width: calc(100% / 6);
-        max-height: 250px;
-    }
-}
+        @media only screen and (min-width: 560px) { 
+            flex: 0 0 calc(100% / 5);
+            width: calc(100% / 5);
+        }
 
-@media (min-width: 560px) {
-    .legends-banner__item {
-        flex: 0 0 calc(100% / 5);
-        width: calc(100% / 5);
-    }
-}
+        @media only screen and (min-width: 768px) { 
+            flex: 0 0 calc(100% / 6);
+            width: calc(100% / 6);
+            max-height: 250px;
+        }
 
-@media (hover: none) and (pointer: coarse) {
-    .legends-banner__item {
-        filter: none;
+        @media only screen and (min-width: 1240px) { 
+            flex: 0 0 calc(100% / 11);
+            width: calc(100% / 11);
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            filter: none;
+        }
     }
 }

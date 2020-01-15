@@ -3,6 +3,7 @@ import ApexLegendsService from "../../Services/ApexLegendsService";
 import { LegendListProps } from "../../Types/Types";
 import "./LegendList.scss";
 import { Link } from "react-router-dom";
+import Heading from "../../Common/Heading/Heading";
 
 const LegendList: React.FC<{}> = () => {
 
@@ -16,7 +17,13 @@ const LegendList: React.FC<{}> = () => {
 
 			{service.status === "loaded" &&
 				<div className="legend-list">
-					<h1>Legends</h1>
+					<div className="heading">
+						<Heading
+							headingType={2}
+						>
+							Legends
+						</Heading>
+					</div>
 					<div className="legend-list__list-of-legends">
 						<div className="legends-banner">
 							{service.payload.map((legends: LegendListProps, key: any) => (
